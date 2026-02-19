@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Breathwork à Marseille — Séances de Respiration & Thérapie Somatique | Samantha Breathwork</title>
+<meta name="description" content="Breathwork à Marseille : libérez les tensions et retrouvez votre légèreté grâce à la respiration consciente et la thérapie somatique. Séances en présentiel et en ligne.">
+<meta name="keywords" content="breathwork marseille, respiration marseille, thérapie somatique marseille, breathwork france, séance breathwork marseille">
+<link rel="canonical" href="https://samantha-breathwork.vercel.app/breathwork-marseille.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Libre+Franklin:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F0EA; --bg-warm: #EDE8E0; --bg-card: #FAF8F5; --bg-light: #F0EBE3;
+    --text: #1A1A1A; --text-soft: #4A4540; --text-muted: #7A746D;
+    --sage: #8B9A7B; --sage-light: #A8B89A; --sage-deep: #6B7A5E;
+    --sage-glow: rgba(139,154,123,0.12); --cream: #FAF8F5;
+    --border: rgba(26,26,26,0.08); --border-light: rgba(26,26,26,0.12);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: 'Libre Franklin', sans-serif; font-weight: 300; background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; }
+  ::selection { background: var(--sage); color: var(--bg); }
+  img { max-width: 100%; height: auto; display: block; }
+  nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 1.2rem 3rem; display: flex; justify-content: space-between; align-items: center; background: rgba(245,240,234,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 1px 0 var(--border); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; letter-spacing: 0.06em; color: var(--text); text-decoration: none; }
+  .nav-back { font-size: 0.78rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-soft); text-decoration: none; transition: color 0.3s; }
+  .nav-back:hover { color: var(--sage-deep); }
+  .city-hero { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 10rem 2rem 5rem; position: relative; overflow: hidden; background: linear-gradient(160deg, #7A8E6A 0%, var(--sage) 35%, #96A787 65%, #A3B494 100%); color: var(--cream); }
+  .city-hero::before { content: ''; position: absolute; top: -30%; right: -20%; width: 70vw; height: 70vw; border-radius: 50%; background: radial-gradient(circle, rgba(245,240,234,0.06) 0%, transparent 70%); pointer-events: none; }
+  .city-hero-content { position: relative; z-index: 2; max-width: 800px; }
+  .city-badge { font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(250,248,245,0.7); margin-bottom: 2rem; font-weight: 400; display: inline-block; border: 1px solid rgba(250,248,245,0.3); padding: 0.4rem 1.5rem; }
+  .city-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+  .city-hero h1 em { font-style: italic; color: #F5F0EA; text-shadow: 0 0 40px rgba(245,240,234,0.2); }
+  .city-hero-sub { font-size: 1.05rem; color: rgba(250,248,245,0.82); max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.8; font-weight: 300; }
+  .city-cta { display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2.5rem; background: var(--cream); color: var(--sage-deep); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 400; transition: all 0.4s ease; }
+  .city-cta:hover { background: var(--text); color: var(--cream); gap: 1.2rem; }
+  .city-cta svg { width: 16px; height: 16px; transition: transform 0.3s ease; }
+  .city-cta:hover svg { transform: translateX(3px); }
+  section { padding: 6rem 2rem; }
+  .section-inner { max-width: 800px; margin: 0 auto; }
+  .section-label { font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--sage); font-weight: 400; margin-bottom: 1.5rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; line-height: 1.2; margin-bottom: 2rem; color: var(--text); }
+  .section-title em { font-style: italic; color: var(--sage); }
+  .problem-section { background: var(--bg-warm); }
+  .problem-list { list-style: none; margin-top: 2rem; }
+  .problem-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1.1rem 0; font-size: 0.95rem; color: var(--text-soft); border-bottom: 1px solid var(--border); line-height: 1.7; }
+  .problem-item:last-child { border-bottom: none; }
+  .problem-item svg { width: 20px; height: 20px; flex-shrink: 0; margin-top: 3px; color: var(--text-muted); }
+  .problem-intro { font-size: 1rem; color: var(--text-soft); line-height: 1.8; margin-bottom: 1rem; }
+  .solution-section { background: var(--bg); }
+  .solution-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+  .solution-card { background: var(--bg-card); border: 1px solid var(--border); padding: 2rem; transition: all 0.4s ease; }
+  .solution-card:hover { border-color: var(--sage-light); transform: translateY(-2px); }
+  .solution-card svg { width: 24px; height: 24px; color: var(--sage); margin-bottom: 1rem; }
+  .solution-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 0.8rem; color: var(--text); }
+  .solution-card p { font-size: 0.88rem; color: var(--text-soft); line-height: 1.7; }
+  .about-section { background: var(--bg-warm); }
+  .about-content p { font-size: 0.95rem; color: var(--text-soft); line-height: 1.8; margin-bottom: 1.5rem; }
+  .testi-section { background: var(--bg); text-align: center; padding: 6rem 2rem; position: relative; }
+  .testi-section::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, var(--sage-glow) 0%, transparent 70%); pointer-events: none; }
+  .testi-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.4rem, 2.5vw, 2.2rem); font-weight: 300; font-style: italic; max-width: 650px; margin: 0 auto 1.5rem; line-height: 1.5; color: var(--text); position: relative; }
+  .testi-quote::before { content: '\201C'; display: block; font-family: 'Cormorant Garamond', serif; font-size: 5rem; line-height: 0.5; color: var(--sage); margin-bottom: 1.5rem; opacity: 0.5; }
+  .testi-author { font-size: 0.82rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sage); }
+  .cta-bottom { background: #1A1A1A; color: var(--bg); text-align: center; padding: 6rem 2rem; position: relative; overflow: hidden; }
+  .cta-bottom::before { content: ''; position: absolute; top: -50%; left: -20%; width: 60vw; height: 60vw; border-radius: 50%; background: radial-gradient(circle, rgba(139,154,123,0.1) 0%, transparent 60%); }
+  .cta-bottom .section-label { color: var(--sage-light); }
+  .cta-bottom .section-title { color: var(--bg); margin: 0 auto 1.5rem; }
+  .cta-bottom .section-title em { color: var(--sage-light); }
+  .cta-bottom-text { font-size: 1rem; color: rgba(245,240,234,0.7); max-width: 500px; margin: 0 auto 3rem; line-height: 1.8; }
+  .cta-bottom-btn { display: inline-flex; align-items: center; gap: 0.8rem; padding: 1.1rem 3rem; background: var(--sage); color: var(--cream); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 400; transition: all 0.4s ease; }
+  .cta-bottom-btn:hover { background: var(--sage-light); gap: 1.2rem; }
+  .cta-bottom-btn svg { width: 16px; height: 16px; transition: transform 0.3s ease; }
+  .cta-bottom-btn:hover svg { transform: translateX(3px); }
+  footer { background: #1A1A1A; color: rgba(245,240,234,0.5); padding: 3rem; text-align: center; font-size: 0.78rem; letter-spacing: 0.05em; border-top: 1px solid rgba(245,240,234,0.08); }
+  footer a { color: var(--sage-light); text-decoration: none; transition: color 0.3s; }
+  footer a:hover { color: var(--cream); }
+  .footer-inner { max-width: 800px; margin: 0 auto; }
+  .footer-cities { margin-top: 1.5rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem 1.5rem; }
+  .footer-cities a { font-size: 0.75rem; color: rgba(245,240,234,0.4); }
+  .footer-cities a:hover { color: var(--sage-light); }
+  .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.25,0.46,0.45,0.94); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } .solution-grid { grid-template-columns: 1fr; } section { padding: 4rem 1.5rem; } }
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HealthAndBeautyBusiness","name":"Samantha Breathwork — Marseille","description":"Séances de breathwork et thérapie somatique à Marseille.","url":"https://samantha-breathwork.vercel.app/breathwork-marseille.html","areaServed":{"@type":"City","name":"Marseille"},"serviceType":["Breathwork","Thérapie somatique","Respiration consciente"]}
+</script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Samantha Breathwork</a>
+  <a href="index.html" class="nav-back">&larr; Retour au site</a>
+</nav>
+
+<section class="city-hero">
+  <div class="city-hero-content">
+    <div class="city-badge">Breathwork à Marseille</div>
+    <h1>Le soleil de Marseille ne suffit pas à tout <em>effacer</em></h1>
+    <p class="city-hero-sub">Derrière la luminosité et l'énergie méditerranéenne, vous portez un poids invisible. Le breathwork vous aide à le déposer — enfin.</p>
+    <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" class="city-cta">
+      Réserver une séance
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+<section class="problem-section">
+  <div class="section-inner reveal">
+    <div class="section-label">Le constat</div>
+    <h2 class="section-title">Marseille vibre fort — mais votre corps <em>sature</em></h2>
+    <p class="problem-intro">Marseille est une ville d'intensité. Le soleil, la mer, l'énergie... tout semble léger vu de l'extérieur. Mais vous savez que derrière cette façade, la réalité est plus complexe.</p>
+    <ul class="problem-list">
+      <li class="problem-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2"/></svg>
+        <span>Vous portez le masque de celle qui va bien — mais à l'intérieur, <strong>vous êtes épuisée par cette énergie constante</strong> qu'on attend de vous</span>
+      </li>
+      <li class="problem-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+        <span>Le rythme marseillais est intense : entre le travail, la famille, les sollicitations sociales, <strong>il n'y a jamais de vraie pause</strong></span>
+      </li>
+      <li class="problem-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        <span>Vous vivez dans une ville magnifique mais <strong>vous n'arrivez plus à en profiter</strong> — comme si un voile vous séparait de tout</span>
+      </li>
+      <li class="problem-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        <span>Les tensions s'accumulent dans votre corps : <strong>nuque, ventre, poitrine</strong> — votre système nerveux crie mais vous continuez</span>
+      </li>
+      <li class="problem-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg>
+        <span>Vous rêvez de retrouver <strong>cette légèreté méditerranéenne</strong> qui vous a quittée depuis trop longtemps</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="solution-section">
+  <div class="section-inner reveal">
+    <div class="section-label">La solution</div>
+    <h2 class="section-title">Le breathwork : retrouver la légèreté du <em>Sud</em></h2>
+    <p class="problem-intro">Le breathwork travaille directement avec votre système nerveux pour le sortir de l'état d'alerte. C'est concret, c'est rapide, et les effets se ressentent dès la première séance.</p>
+    <div class="solution-grid">
+      <div class="solution-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <h3>Lâcher-prise profond</h3>
+        <p>Votre corps relâche enfin la pression accumulée. Les tensions fondent comme neige au soleil.</p>
+      </div>
+      <div class="solution-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <h3>Libération émotionnelle</h3>
+        <p>Les émotions retenues trouvent une issue — sans avoir besoin de tout analyser ou tout comprendre.</p>
+      </div>
+      <div class="solution-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <h3>Énergie retrouvée</h3>
+        <p>Fini l'épuisement masqué. Vous retrouvez une vitalité authentique, pas celle qu'on simule.</p>
+      </div>
+      <div class="solution-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <h3>Ancrage quotidien</h3>
+        <p>Des outils de respiration simples à pratiquer chez vous, face à la mer ou dans votre salon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="section-inner reveal">
+    <div class="section-label">Votre praticienne</div>
+    <h2 class="section-title">Un accompagnement qui comprend l'<em>intensité marseillaise</em></h2>
+    <div class="about-content">
+      <p>Samantha connaît bien les femmes de Marseille : celles qui portent tout avec le sourire, qui donnent sans compter, et qui finissent par s'oublier derrière la façade solaire qu'on leur demande de maintenir.</p>
+      <p>Son approche combine <strong>thérapie somatique</strong> et <strong>breathwork</strong> pour aller au-delà du mental et libérer ce que le corps retient. Un espace sans jugement où vous pouvez enfin déposer l'armure.</p>
+      <p>Séances disponibles en <strong>présentiel</strong> et en <strong>ligne</strong> depuis Marseille.</p>
+    </div>
+  </div>
+</section>
+
+<div class="testi-section">
+  <div class="section-inner reveal">
+    <div class="testi-quote">Marseille m'a toujours demandé d'être forte. Avec Samantha, j'ai découvert que la vraie force, c'est de s'autoriser à ressentir.</div>
+    <div class="testi-author">&mdash; Léa, Marseille 8e</div>
+  </div>
+</div>
+
+<section class="cta-bottom">
+  <div class="section-inner reveal">
+    <div class="section-label">Prête à respirer ?</div>
+    <h2 class="section-title">Votre première séance de breathwork <em>à Marseille</em></h2>
+    <p class="cta-bottom-text">Réservez un appel découverte gratuit de 30 minutes. On échange sur votre situation et vos besoins — sans engagement, sans pression.</p>
+    <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" class="cta-bottom-btn">
+      Réserver mon appel gratuit
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span>&copy; 2025 Samantha Breathwork. Tous droits réservés.</span>
+    <div class="footer-cities">
+      <a href="breathwork-paris.html">Paris</a> <a href="breathwork-lyon.html">Lyon</a> <a href="breathwork-marseille.html">Marseille</a> <a href="breathwork-bordeaux.html">Bordeaux</a> <a href="breathwork-toulouse.html">Toulouse</a> <a href="breathwork-nice.html">Nice</a> <a href="breathwork-nantes.html">Nantes</a> <a href="breathwork-strasbourg.html">Strasbourg</a> <a href="breathwork-montpellier.html">Montpellier</a> <a href="breathwork-lille.html">Lille</a>
+    </div>
+  </div>
+</footer>
+<script>
+  const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
