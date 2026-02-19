@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samantha Breathwork — Somatic Therapy & Breathwork</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Libre+Franklin:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F0EA;
+    --bg-warm: #EDE8E0;
+    --bg-card: #FAF8F5;
+    --bg-light: #F0EBE3;
+    --text: #1A1A1A;
+    --text-soft: #4A4540;
+    --text-muted: #7A746D;
+    --sage: #8B9A7B;
+    --sage-light: #A8B89A;
+    --sage-deep: #6B7A5E;
+    --sage-glow: rgba(139,154,123,0.12);
+    --gold: #C8A96E;
+    --gold-soft: rgba(200,169,110,0.12);
+    --cream: #FAF8F5;
+    --border: rgba(26,26,26,0.08);
+    --border-light: rgba(26,26,26,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 300;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--sage);
+    color: var(--bg);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 1.2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+    background: transparent;
+  }
+
+  nav.scrolled {
+    background: rgba(245, 240, 234, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 1px 0 var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: var(--cream);
+    text-decoration: none;
+    transition: color 0.5s;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(250,248,245,0.8);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+  }
+
+  nav.scrolled .nav-links a { color: var(--text-soft); }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--cream);
+    transition: width 0.4s ease;
+  }
+
+  nav.scrolled .nav-links a::after { background: var(--sage); }
+
+  .nav-links a:hover { color: var(--cream); }
+  nav.scrolled .nav-links a:hover { color: var(--text); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .lang-toggle {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: none;
+    border: 1px solid rgba(250,248,245,0.5);
+    color: var(--cream);
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    border-radius: 0;
+  }
+
+  nav.scrolled .lang-toggle {
+    border-color: var(--sage);
+    color: var(--sage-deep);
+  }
+
+  .lang-toggle:hover {
+    background: var(--cream);
+    color: var(--sage-deep);
+  }
+
+  nav.scrolled .lang-toggle:hover {
+    background: var(--sage);
+    color: var(--cream);
+  }
+
+  /* ── HAMBURGER ── */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+    z-index: 110;
+  }
+
+  .hamburger span {
+    width: 24px;
+    height: 1.5px;
+    background: var(--cream);
+    transition: all 0.3s ease;
+  }
+
+  nav.scrolled .hamburger span { background: var(--text); }
+
+  .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 5px); }
+  .hamburger.active span:nth-child(2) { opacity: 0; }
+  .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(4px, -5px); }
+
+  /* ── MOBILE MENU ── */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--bg);
+    z-index: 105;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .mobile-menu.active { display: flex; }
+
+  .mobile-menu a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.3s;
+  }
+
+  .mobile-menu a:hover { color: var(--sage); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 8rem 2rem 6rem;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(160deg, #7A8E6A 0%, var(--sage) 35%, #96A787 65%, #A3B494 100%);
+    color: var(--cream);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -20%;
+    width: 70vw;
+    height: 70vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245,240,234,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -15%;
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245,240,234,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-leaf {
+    font-size: 0.72rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(250,248,245,0.75);
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.3s forwards;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    font-weight: 300;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.5s forwards;
+    max-width: 900px;
+    color: var(--cream);
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: #F5F0EA;
+    text-shadow: 0 0 40px rgba(245,240,234,0.2);
+  }
+
+  .hero-sub {
+    font-size: 1.02rem;
+    color: rgba(250,248,245,0.82);
+    max-width: 540px;
+    line-height: 1.9;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.7s forwards;
+    margin-bottom: 3rem;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2.5rem;
+    background: var(--cream);
+    color: var(--sage-deep);
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: all 0.4s ease;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.9s forwards;
+  }
+
+  .hero-cta:hover {
+    background: var(--text);
+    color: var(--cream);
+    gap: 1.2rem;
+  }
+
+  .hero-cta svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+  }
+
+  .hero-cta:hover svg { transform: translateX(3px); }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 1.2s forwards;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: rgba(250,248,245,0.3);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scroll-line::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: var(--cream);
+    animation: scrollDown 2s ease infinite;
+  }
+
+  /* ── SECTION SHARED ── */
+  section {
+    padding: 7rem 2rem;
+  }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    color: var(--text);
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--sage-light);
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    background: var(--bg-warm);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-image {
+    aspect-ratio: 3/4;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-card);
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .about-image::after {
+    content: '';
+    position: absolute;
+    inset: 16px;
+    border: 1px solid rgba(139,154,123,0.2);
+    pointer-events: none;
+  }
+
+  .about-text p {
+    color: var(--text-soft);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .about-text p:first-of-type::first-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    float: left;
+    line-height: 0.8;
+    margin-right: 0.5rem;
+    margin-top: 0.15rem;
+    color: var(--sage-deep);
+  }
+
+  .sage-divider {
+    width: 50px;
+    height: 1px;
+    background: var(--sage);
+    margin: 2rem 0;
+  }
+
+  /* ── PHOTO BANNER ── */
+  .photo-banner {
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .photo-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+
+  .photo-banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, var(--bg-warm) 0%, transparent 15%, transparent 85%, var(--bg) 100%);
+    pointer-events: none;
+  }
+
+  /* ── APPROACH ── */
+  #approach {
+    background: var(--bg);
+  }
+
+  .approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 3rem;
+  }
+
+  .approach-card {
+    background: var(--bg-card);
+    padding: 3rem 2.5rem;
+    position: relative;
+    transition: all 0.5s ease;
+    border: 1px solid var(--border);
+  }
+
+  .approach-card:hover {
+    background: var(--bg-light);
+    border-color: var(--sage-deep);
+  }
+
+  .approach-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--sage);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    opacity: 0.5;
+  }
+
+  .approach-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .approach-card p {
+    font-size: 0.88rem;
+    color: var(--text-soft);
+    line-height: 1.8;
+  }
+
+  /* ── TRANSFORMATION (Before/After) ── */
+  .transformation-section {
+    background: var(--bg-warm);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .transformation-section::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -15%;
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--sage-glow) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .transformation-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0;
+    margin-top: 3rem;
+    align-items: stretch;
+  }
+
+  .transformation-col {
+    padding: 3rem;
+    position: relative;
+  }
+
+  .transformation-col.before {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+  }
+
+  .transformation-col.after {
+    background: linear-gradient(160deg, #7A8E6A 0%, var(--sage) 50%, #96A787 100%);
+    color: var(--cream);
+    border: 1px solid var(--sage);
+  }
+
+  .transformation-col.after .transform-label {
+    color: rgba(250,248,245,0.7);
+    border-color: rgba(250,248,245,0.3);
+  }
+
+  .transformation-col.after .transform-item {
+    color: rgba(250,248,245,0.9);
+    border-bottom-color: rgba(250,248,245,0.15);
+  }
+
+  .transformation-col.after .transform-item svg {
+    color: var(--cream);
+    opacity: 0.8;
+  }
+
+  .transformation-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    background: var(--bg-warm);
+    position: relative;
+    z-index: 2;
+  }
+
+  .transformation-arrow-inner {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--sage);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(139,154,123,0.3);
+  }
+
+  .transformation-arrow-inner svg {
+    width: 20px;
+    height: 20px;
+    color: var(--cream);
+  }
+
+  .transform-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border: 1px solid var(--border-light);
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+
+  .transform-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-bottom: 1.8rem;
+    line-height: 1.3;
+  }
+
+  .transformation-col.before .transform-heading {
+    color: var(--text-muted);
+  }
+
+  .transformation-col.after .transform-heading {
+    color: var(--cream);
+  }
+
+  .transform-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .transform-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 0.9rem 0;
+    font-size: 0.88rem;
+    color: var(--text-soft);
+    border-bottom: 1px solid var(--border);
+    line-height: 1.6;
+  }
+
+  .transform-item:last-child {
+    border-bottom: none;
+  }
+
+  .transform-item svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--sage);
+  }
+
+  .transformation-photo {
+    margin-top: 3rem;
+    overflow: hidden;
+    aspect-ratio: 21/9;
+    max-height: 350px;
+    position: relative;
+  }
+
+  .transformation-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+  }
+
+  .transformation-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, var(--bg-warm) 100%);
+    pointer-events: none;
+  }
+
+  .transformation-cta-wrap {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .transformation-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2.5rem;
+    background: var(--text);
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: all 0.4s ease;
+  }
+
+  .transformation-cta:hover {
+    background: var(--sage-deep);
+    gap: 1.2rem;
+  }
+
+  .transformation-cta svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+  }
+
+  .transformation-cta:hover svg { transform: translateX(3px); }
+
+  @media (max-width: 900px) {
+    .transformation-grid {
+      grid-template-columns: 1fr;
+    }
+    .transformation-arrow {
+      width: 100%;
+      height: 60px;
+    }
+    .transformation-col {
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  /* ── OFFERS ── */
+  #offers {
+    background: var(--bg-warm);
+  }
+
+  .offers-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  .offer-card {
+    padding: 3.5rem;
+    border: 1px solid var(--border);
+    position: relative;
+    transition: all 0.5s ease;
+    background: var(--bg-card);
+  }
+
+  .offer-card:hover {
+    border-color: var(--sage-light);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.04);
+  }
+
+  .offer-badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+    border: 1px solid var(--sage-deep);
+    padding: 0.3rem 1rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+
+  .offer-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+    color: var(--text);
+  }
+
+  .offer-card p {
+    font-size: 0.9rem;
+    color: var(--text-soft);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+  }
+
+  .offer-features {
+    list-style: none;
+    margin-bottom: 2.5rem;
+  }
+
+  .offer-features li {
+    font-size: 0.85rem;
+    color: var(--text-soft);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .offer-features li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--sage);
+  }
+
+  .offer-btn {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    background: var(--text);
+    color: var(--bg);
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: all 0.3s ease;
+  }
+
+  .offer-btn:hover {
+    background: var(--sage-deep);
+    color: var(--cream);
+  }
+
+  .offer-btn.outline {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--text);
+  }
+
+  .offer-btn.outline:hover {
+    background: var(--text);
+    color: var(--bg);
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonial-section {
+    text-align: center;
+    padding: 8rem 2rem;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonial-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--sage-glow) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .testimonial-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 300;
+    font-style: italic;
+    max-width: 750px;
+    margin: 0 auto 2rem;
+    line-height: 1.5;
+    color: var(--text);
+    position: relative;
+  }
+
+  .testimonial-quote::before {
+    content: '\201C';
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 6rem;
+    line-height: 0.5;
+    color: var(--sage);
+    margin-bottom: 1.5rem;
+    opacity: 0.5;
+  }
+
+  .testimonial-author {
+    font-size: 0.82rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 400;
+  }
+
+  /* ── PRESS QUOTE ── */
+  .press-section {
+    padding: 5rem 2rem;
+    background: var(--bg-card);
+    text-align: center;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .press-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .press-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 2.5vw, 2rem);
+    font-weight: 300;
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.4;
+    color: var(--text);
+  }
+
+  .press-source {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── FAQ ── */
+  #faq {
+    background: var(--bg);
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 1.8rem 0;
+  }
+
+  .faq-question {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  .faq-question:hover { color: var(--sage-deep); }
+
+  .faq-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+    color: var(--sage);
+    flex-shrink: 0;
+    margin-left: 1rem;
+  }
+
+  .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 300px;
+    padding-top: 1rem;
+  }
+
+  .faq-answer p {
+    font-size: 0.9rem;
+    color: var(--text-soft);
+    line-height: 1.8;
+  }
+
+  /* ── CTA / CONTACT ── */
+  .cta-section {
+    background: #1A1A1A;
+    color: var(--bg);
+    text-align: center;
+    padding: 8rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(139,154,123,0.1) 0%, transparent 60%);
+  }
+
+  .cta-section .section-label {
+    color: var(--sage-light);
+  }
+
+  .cta-section .section-title {
+    color: var(--bg);
+    margin: 0 auto 1.5rem;
+  }
+
+  .cta-section .section-title em {
+    color: var(--sage-light);
+  }
+
+  .cta-text {
+    font-size: 1rem;
+    color: rgba(245,240,234,0.7);
+    max-width: 500px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.1rem 3rem;
+    background: var(--sage);
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: all 0.4s ease;
+  }
+
+  .cta-btn:hover {
+    background: var(--sage-light);
+    gap: 1.2rem;
+  }
+
+  .cta-btn svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+  }
+
+  .cta-btn:hover svg { transform: translateX(3px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #1A1A1A;
+    color: rgba(245,240,234,0.5);
+    padding: 3rem;
+    text-align: center;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    border-top: 1px solid rgba(245,240,234,0.08);
+  }
+
+  footer a {
+    color: var(--sage-light);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  footer a:hover { color: var(--sage-light); }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-social a {
+    color: rgba(245,240,234,0.5);
+    transition: color 0.3s;
+  }
+
+  .footer-social a:hover { color: var(--sage-light); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollDown {
+    0% { top: -100%; }
+    100% { top: 100%; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .about-image {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .approach-grid {
+      grid-template-columns: 1fr;
+      gap: 1px;
+    }
+
+    .offers-container {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-inner {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    section { padding: 5rem 1.5rem; }
+
+    .photo-banner {
+      height: 40vh;
+      min-height: 280px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">Samantha Breathwork</a>
+  <ul class="nav-links">
+    <li><a href="#about" data-fr="A propos" data-en="About">A propos</a></li>
+    <li><a href="#approach" data-fr="Approche" data-en="Approach">Approche</a></li>
+    <li><a href="#offers" data-fr="Offres" data-en="Offers">Offres</a></li>
+    <li><a href="#faq" data-fr="FAQ" data-en="FAQ">FAQ</a></li>
+    <li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
+    <li><button class="lang-toggle" onclick="toggleLang()">EN</button></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="toggleMenu()" data-fr="A propos" data-en="About">A propos</a>
+  <a href="#approach" onclick="toggleMenu()" data-fr="Approche" data-en="Approach">Approche</a>
+  <a href="#offers" onclick="toggleMenu()" data-fr="Offres" data-en="Offers">Offres</a>
+  <a href="#faq" onclick="toggleMenu()" data-fr="FAQ" data-en="FAQ">FAQ</a>
+  <a href="#contact" onclick="toggleMenu()" data-fr="Contact" data-en="Contact">Contact</a>
+  <button class="lang-toggle" onclick="toggleLang()" style="margin-top:1rem;">EN</button>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-leaf" data-fr="Somatic Therapy &middot; Breathwork" data-en="Somatic Therapy &middot; Breathwork">Somatic Therapy &middot; Breathwork</div>
+    <h1 data-fr="Sortir du mode <em>survie</em>, retrouver la paix" data-en="Leave <em>survival</em> mode, find your peace">Sortir du mode <em>survie</em>, retrouver la paix</h1>
+    <p class="hero-sub" data-fr="J'accompagne les femmes a liberer les blocages emotionnels, reconnecter corps et esprit, et retrouver un espace de paix interieure &mdash; a travers la therapie somatique et le breathwork." data-en="I guide women to release emotional blockages, reconnect body and mind, and find inner peace &mdash; through somatic therapy and breathwork.">J'accompagne les femmes a liberer les blocages emotionnels, reconnecter corps et esprit, et retrouver un espace de paix interieure &mdash; a travers la therapie somatique et le breathwork.</p>
+    <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" class="hero-cta">
+      <span data-fr="Reserver une seance" data-en="Book a session">Reserver une seance</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <img src="images/WhatsApp Image 2026-02-09 at 10.03.03.jpeg" alt="Samantha - Somatic Therapist & Breathwork Facilitator" loading="lazy">
+      </div>
+      <div class="about-text reveal" style="transition-delay: 0.2s">
+        <div class="section-label" data-fr="Mon histoire" data-en="My story">Mon histoire</div>
+        <h2 class="section-title" data-fr="Un chemin de <em>retour a soi</em>" data-en="A path <em>back to yourself</em>">Un chemin de <em>retour a soi</em></h2>
+        <p data-fr="Je suis Samantha, therapeute somatique et facilitatrice de breathwork. Apres avoir moi-meme traverse des periodes intenses de stress, de deconnexion et de mode survie, j'ai decouvert la puissance transformatrice du travail corporel et du souffle." data-en="I'm Samantha, a somatic therapist and breathwork facilitator. After going through intense periods of stress, disconnection, and survival mode myself, I discovered the transformative power of bodywork and breath.">Je suis Samantha, therapeute somatique et facilitatrice de breathwork. Apres avoir moi-meme traverse des periodes intenses de stress, de deconnexion et de mode survie, j'ai decouvert la puissance transformatrice du travail corporel et du souffle.</p>
+        <div class="sage-divider"></div>
+        <p data-fr="Aujourd'hui, j'accompagne les femmes qui se sentent epuisees, submergees, ou coincees dans des schemas qui ne leur ressemblent plus. Mon approche est douce, profonde, et profondement humaine." data-en="Today, I support women who feel exhausted, overwhelmed, or stuck in patterns that no longer serve them. My approach is gentle, deep, and profoundly human.">Aujourd'hui, j'accompagne les femmes qui se sentent epuisees, submergees, ou coincees dans des schemas qui ne leur ressemblent plus. Mon approche est douce, profonde, et profondement humaine.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach">
+  <div class="section-inner">
+    <div class="section-label reveal" data-fr="Mon approche" data-en="My approach">Mon approche</div>
+    <h2 class="section-title reveal" data-fr="Le corps sait ce que <em>le mental oublie</em>" data-en="The body knows what <em>the mind forgets</em>">Le corps sait ce que <em>le mental oublie</em></h2>
+    <div class="approach-grid">
+      <div class="approach-card reveal">
+        <div class="approach-num">01</div>
+        <h3 data-fr="Therapie Somatique" data-en="Somatic Therapy">Therapie Somatique</h3>
+        <p data-fr="Le corps garde en memoire ce que nous traversons. La therapie somatique permet de liberer ces tensions profondes, de relacher le systeme nerveux et de restaurer un sentiment de securite interieure." data-en="The body stores everything we go through. Somatic therapy helps release deep-seated tension, regulate the nervous system, and restore a sense of inner safety.">Le corps garde en memoire ce que nous traversons. La therapie somatique permet de liberer ces tensions profondes, de relacher le systeme nerveux et de restaurer un sentiment de securite interieure.</p>
+      </div>
+      <div class="approach-card reveal" style="transition-delay: 0.15s">
+        <div class="approach-num">02</div>
+        <h3 data-fr="Breathwork" data-en="Breathwork">Breathwork</h3>
+        <p data-fr="Le souffle est la porte d'entree la plus directe vers votre systeme nerveux. A travers des techniques de respiration consciente, nous creons un espace pour liberer les emotions bloquees et retrouver la clarte." data-en="Breath is the most direct doorway to your nervous system. Through conscious breathing techniques, we create space to release blocked emotions and find clarity.">Le souffle est la porte d'entree la plus directe vers votre systeme nerveux. A travers des techniques de respiration consciente, nous creons un espace pour liberer les emotions bloquees et retrouver la clarte.</p>
+      </div>
+      <div class="approach-card reveal" style="transition-delay: 0.3s">
+        <div class="approach-num">03</div>
+        <h3 data-fr="Integration" data-en="Integration">Integration</h3>
+        <p data-fr="Chaque seance est suivie d'un temps d'integration et d'echanges. L'objectif est de vous donner des outils concrets pour ancrer ces transformations dans votre quotidien et sortir durablement du mode survie." data-en="Each session is followed by integration time and dialogue. The goal is to give you practical tools to anchor these transformations in your daily life and sustainably leave survival mode.">Chaque seance est suivie d'un temps d'integration et d'echanges. L'objectif est de vous donner des outils concrets pour ancrer ces transformations dans votre quotidien et sortir durablement du mode survie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMATION (Before / After) -->
+<section class="transformation-section" id="transformation">
+  <div class="section-inner">
+    <div class="section-label reveal" data-fr="Votre transformation" data-en="Your transformation">Votre transformation</div>
+    <h2 class="section-title reveal" data-fr="Du mode <em>survie</em> a une vie <em>alignee</em>" data-en="From <em>survival</em> mode to an <em>aligned</em> life">Du mode <em>survie</em> a une vie <em>alignee</em></h2>
+
+    <div class="transformation-grid reveal">
+      <!-- BEFORE -->
+      <div class="transformation-col before">
+        <div class="transform-label" data-fr="Aujourd'hui" data-en="Today">Aujourd'hui</div>
+        <div class="transform-heading" data-fr="Ou vous etes peut-etre en ce moment..." data-en="Where you might be right now...">Ou vous etes peut-etre en ce moment...</div>
+        <ul class="transform-list">
+          <li class="transform-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2"/><circle cx="9" cy="9" r="1" fill="currentColor"/><circle cx="15" cy="9" r="1" fill="currentColor"/></svg>
+            <span data-fr="Vous vous sentez constamment epuisee, a bout de souffle" data-en="You feel constantly exhausted, running on empty">Vous vous sentez constamment epuisee, a bout de souffle</span>
+          </li>
+          <li class="transform-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            <span data-fr="Le stress et l'anxiete dirigent vos journees" data-en="Stress and anxiety run your daily life">Le stress et l'anxiete dirigent vos journees</span>
+          </li>
+          <li class="transform-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            <span data-fr="Vous repetez des schemas qui ne vous correspondent plus" data-en="You repeat patterns that no longer serve you">Vous repetez des schemas qui ne vous correspondent plus</span>
+          </li>
+          <li class="transform-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/><line x1="4" y1="4" x2="20" y2="20"/></svg>
+            <span data-fr="Deconnexion entre votre corps et votre esprit" data-en="Disconnection between your body and mind">Deconnexion entre votre corps et votre esprit</span>
+          </li>
+          <li class="transform-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+            <span data-fr="Vous savez que quelque chose doit changer, mais vous ne savez pas par ou commencer" data-en="You know something needs to change, but you don't know where to start">Vous savez que quelque chose doit changer, mais vous ne savez pas par ou commencer</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ARROW -->
+      <div class="transformation-arrow">
+        <div class="transformation-arrow-inner">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+      </div>
+
+      <!-- AFTER -->
+      <div class="transformation-col after">
+        <div class="transform-label" data-fr="Apres le travail ensemble" data-en="After working together">Apres le travail ensemble</div>
+        <div class="transform-heading" data-fr="Ce qui vous attend de l'autre cote..." data-en="What awaits you on the other side...">Ce qui vous attend de l'autre cote...</div>
+        <ul class="transform-list">
+          <li class="transform-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span data-fr="Un systeme nerveux apaise : vous respirez enfin" data-en="A calm nervous system: you can finally breathe">Un systeme nerveux apaise : vous respirez enfin</span>
+          </li>
+          <li class="transform-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span data-fr="Une clarte emotionnelle et mentale retrouvee" data-en="Emotional and mental clarity restored">Une clarte emotionnelle et mentale retrouvee</span>
+          </li>
+          <li class="transform-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span data-fr="Des schemas brises : vous choisissez en conscience" data-en="Broken patterns: you choose with awareness">Des schemas brises : vous choisissez en conscience</span>
+          </li>
+          <li class="transform-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span data-fr="Une reconnexion profonde a votre corps et vos besoins" data-en="A deep reconnection to your body and needs">Une reconnexion profonde a votre corps et vos besoins</span>
+          </li>
+          <li class="transform-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span data-fr="Un espace interieur de paix, de confiance et d'alignement" data-en="An inner space of peace, trust, and alignment">Un espace interieur de paix, de confiance et d'alignement</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="transformation-cta-wrap reveal">
+      <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" class="transformation-cta">
+        <span data-fr="Commencer ma transformation" data-en="Start my transformation">Commencer ma transformation</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<div class="testimonial-section">
+  <div class="section-inner reveal">
+    <div class="testimonial-quote" data-fr="Grace a Samantha, j'ai appris a ecouter mon corps. Pour la premiere fois depuis des annees, je me sens en paix. C'est comme si quelque chose de profond s'etait enfin libere." data-en="Thanks to Samantha, I learned to listen to my body. For the first time in years, I feel at peace. It's as if something deep finally released.">Grace a Samantha, j'ai appris a ecouter mon corps. Pour la premiere fois depuis des annees, je me sens en paix. C'est comme si quelque chose de profond s'etait enfin libere.</div>
+    <div class="testimonial-author">&mdash; Marie, Paris</div>
+  </div>
+</div>
+
+<!-- OFFERS -->
+<section id="offers">
+  <div class="section-inner">
+    <div class="section-label reveal" data-fr="Offres" data-en="Offers">Offres</div>
+    <h2 class="section-title reveal" data-fr="Choisissez votre <em>chemin</em>" data-en="Choose your <em>path</em>">Choisissez votre <em>chemin</em></h2>
+    <div class="offers-container">
+
+      <!-- Single Session -->
+      <div class="offer-card reveal">
+        <div class="offer-badge" data-fr="Decouverte" data-en="Discovery">Decouverte</div>
+        <h3 data-fr="Seance a l'unite" data-en="Single Session">Seance a l'unite</h3>
+        <p data-fr="Une seance individuelle de therapie somatique et breathwork pour decouvrir le travail, liberer une tension immediate, ou simplement vous offrir un moment de reconnexion profonde." data-en="An individual somatic therapy and breathwork session to discover the work, release immediate tension, or simply give yourself a moment of deep reconnection.">Une seance individuelle de therapie somatique et breathwork pour decouvrir le travail, liberer une tension immediate, ou simplement vous offrir un moment de reconnexion profonde.</p>
+        <ul class="offer-features">
+          <li data-fr="Seance de 60-90 minutes" data-en="60-90 minute session">Seance de 60-90 minutes</li>
+          <li data-fr="En presentiel ou en ligne" data-en="In person or online">En presentiel ou en ligne</li>
+          <li data-fr="Bilan personnalise" data-en="Personalized assessment">Bilan personnalise</li>
+          <li data-fr="Outils pratiques a emporter" data-en="Practical tools to take away">Outils pratiques a emporter</li>
+        </ul>
+        <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" class="offer-btn outline" data-fr="Reserver" data-en="Book now">Reserver</a>
+      </div>
+
+      <!-- 1:1 Guidance -->
+      <div class="offer-card reveal" style="transition-delay: 0.15s">
+        <div class="offer-badge" data-fr="Transformation" data-en="Transformation">Transformation</div>
+        <h3 data-fr="Accompagnement 1:1" data-en="1:1 Guidance">Accompagnement 1:1</h3>
+        <p data-fr="Un accompagnement sur mesure de 3 a 6 mois pour un travail en profondeur. Ensemble, nous creons un espace securisant pour transformer durablement votre relation a vous-meme." data-en="A bespoke 3 to 6 month program for deep, lasting work. Together, we create a safe space to sustainably transform your relationship with yourself.">Un accompagnement sur mesure de 3 a 6 mois pour un travail en profondeur. Ensemble, nous creons un espace securisant pour transformer durablement votre relation a vous-meme.</p>
+        <ul class="offer-features">
+          <li data-fr="Programme de 3 a 6 mois" data-en="3 to 6 month program">Programme de 3 a 6 mois</li>
+          <li data-fr="Seances bi-mensuelles" data-en="Bi-weekly sessions">Seances bi-mensuelles</li>
+          <li data-fr="Support entre les seances" data-en="Between-session support">Support entre les seances</li>
+          <li data-fr="Exercices & rituels personnalises" data-en="Personalized exercises & rituals">Exercices & rituels personnalises</li>
+          <li data-fr="Appel decouverte offert" data-en="Free discovery call">Appel decouverte offert</li>
+        </ul>
+        <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" class="offer-btn" data-fr="Reserver un appel" data-en="Book a call">Reserver un appel</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="section-label reveal" data-fr="Questions frequentes" data-en="Frequently asked questions">Questions frequentes</div>
+    <h2 class="section-title reveal" data-fr="Ce que vous voulez <em>savoir</em>" data-en="What you want to <em>know</em>">Ce que vous voulez <em>savoir</em></h2>
+    <div style="margin-top: 2.5rem;">
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span data-fr="C'est quoi exactement la therapie somatique ?" data-en="What exactly is somatic therapy?">C'est quoi exactement la therapie somatique ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-fr="La therapie somatique est une approche centree sur le corps qui permet de liberer les tensions, les traumas et les emotions stockees dans le systeme nerveux. Contrairement aux therapies purement verbales, elle travaille avec les sensations physiques pour creer un changement profond et durable." data-en="Somatic therapy is a body-centered approach that helps release tension, trauma, and emotions stored in the nervous system. Unlike purely verbal therapies, it works with physical sensations to create deep and lasting change.">La therapie somatique est une approche centree sur le corps qui permet de liberer les tensions, les traumas et les emotions stockees dans le systeme nerveux. Contrairement aux therapies purement verbales, elle travaille avec les sensations physiques pour creer un changement profond et durable.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span data-fr="Les seances sont-elles en presentiel ou en ligne ?" data-en="Are sessions in person or online?">Les seances sont-elles en presentiel ou en ligne ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-fr="Les deux options sont possibles. Les seances en presentiel permettent un travail corporel plus approfondi, mais les seances en ligne sont tout aussi transformatrices et offrent plus de flexibilite." data-en="Both options are available. In-person sessions allow for deeper bodywork, but online sessions are equally transformative and offer more flexibility.">Les deux options sont possibles. Les seances en presentiel permettent un travail corporel plus approfondi, mais les seances en ligne sont tout aussi transformatrices et offrent plus de flexibilite.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span data-fr="Combien de seances faut-il pour voir des resultats ?" data-en="How many sessions are needed to see results?">Combien de seances faut-il pour voir des resultats ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-fr="Chaque personne est unique. Certaines ressentent un soulagement des la premiere seance. Pour un changement durable et profond, un accompagnement de 3 a 6 mois est recommande &mdash; c'est le temps necessaire pour reprogrammer le systeme nerveux en douceur." data-en="Everyone is unique. Some feel relief from the very first session. For deep, lasting change, a 3 to 6 month program is recommended &mdash; this is the time needed to gently reprogram the nervous system.">Chaque personne est unique. Certaines ressentent un soulagement des la premiere seance. Pour un changement durable et profond, un accompagnement de 3 a 6 mois est recommande &mdash; c'est le temps necessaire pour reprogrammer le systeme nerveux en douceur.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span data-fr="Est-ce que le breathwork peut etre intense ?" data-en="Can breathwork be intense?">Est-ce que le breathwork peut etre intense ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-fr="Le breathwork peut effectivement amener des liberations emotionnelles puissantes. Tout est fait dans un cadre securisant et bienveillant. Vous etes guidee a votre rythme et je suis la pour vous accompagner a chaque instant." data-en="Breathwork can indeed bring powerful emotional releases. Everything is done in a safe, nurturing environment. You are guided at your own pace and I am there to support you every step of the way.">Le breathwork peut effectivement amener des liberations emotionnelles puissantes. Tout est fait dans un cadre securisant et bienveillant. Vous etes guidee a votre rythme et je suis la pour vous accompagner a chaque instant.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section class="cta-section" id="contact">
+  <div class="section-inner reveal">
+    <div class="section-label" data-fr="Prete a commencer ?" data-en="Ready to begin?">Prete a commencer ?</div>
+    <h2 class="section-title" data-fr="Votre transformation <em>commence ici</em>" data-en="Your transformation <em>starts here</em>">Votre transformation <em>commence ici</em></h2>
+    <p class="cta-text" data-fr="Reservez un appel decouverte gratuit de 30 minutes. Nous echangerons sur vos besoins et je vous guiderai vers l'accompagnement le plus adapte pour vous." data-en="Book a free 30-minute discovery call. We'll discuss your needs and I'll guide you toward the support that best fits you.">Reservez un appel decouverte gratuit de 30 minutes. Nous echangerons sur vos besoins et je vous guiderai vers l'accompagnement le plus adapte pour vous.</p>
+    <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" class="cta-btn">
+      <span data-fr="Reserver mon appel" data-en="Book my call">Reserver mon appel</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span>&copy; 2025 Samantha Breathwork. <span data-fr="Tous droits reserves." data-en="All rights reserved.">Tous droits reserves.</span></span>
+    <div class="footer-social">
+      <a href="#" aria-label="Instagram">Instagram</a>
+      <a href="mailto:samanthabreathwork-fyum@gmail.com" aria-label="Email">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── LANGUAGE TOGGLE ──
+  let currentLang = 'fr';
+
+  function toggleLang() {
+    currentLang = currentLang === 'fr' ? 'en' : 'fr';
+    document.documentElement.lang = currentLang;
+
+    document.querySelectorAll('.lang-toggle').forEach(btn => {
+      btn.textContent = currentLang === 'fr' ? 'EN' : 'FR';
+    });
+
+    document.querySelectorAll('[data-fr]').forEach(el => {
+      const text = el.getAttribute('data-' + currentLang);
+      if (text) {
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+          el.placeholder = text;
+        } else {
+          el.innerHTML = text;
+        }
+      }
+    });
+  }
+
+  // ── NAV SCROLL ──
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // ── MOBILE MENU ──
+  function toggleMenu() {
+    document.querySelector('.hamburger').classList.toggle('active');
+    document.getElementById('mobileMenu').classList.toggle('active');
+    document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('active') ? 'hidden' : '';
+  }
+
+  // ── FAQ ACCORDION ──
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const wasActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+    if (!wasActive) item.classList.add('active');
+  }
+
+  // ── REVEAL ON SCROLL ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
