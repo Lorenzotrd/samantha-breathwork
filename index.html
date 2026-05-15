@@ -233,11 +233,16 @@
     padding: 8rem 2rem 6rem;
     position: relative;
     overflow: hidden;
-    background:
-      linear-gradient(rgba(139, 154, 123, 0.62), rgba(139, 154, 123, 0.62)),
-      url('images/hero.jpeg') center/cover no-repeat,
-      #8B9A7B;
+    background: url('images/hero.jpeg') center/cover no-repeat, #8B9A7B;
     color: var(--cream);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(139, 154, 123, 0.3);
+    pointer-events: none;
+    z-index: 1;
   }
 
   .hero::before {
@@ -1271,6 +1276,7 @@
 
 <!-- HERO -->
 <section class="hero" id="home">
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-leaf" data-fr="Somatic Therapy &middot; Breathwork" data-en="Somatic Therapy &middot; Breathwork">Somatic Therapy &middot; Breathwork</div>
     <h1 data-fr="Sortir du mode <em>survie</em>, retrouver la paix" data-en="Leave <em>survival</em> mode, find your peace">Sortir du mode <em>survie</em>, retrouver la paix</h1>
