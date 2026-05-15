@@ -904,6 +904,59 @@
     font-weight: 400;
   }
 
+  /* ── VIDEO TESTIMONIALS ── */
+  .video-testimonials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 3rem auto 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .video-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .video-card video,
+  .video-card .video-placeholder {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    max-width: 260px;
+    background: var(--sage-deep);
+    border-radius: 4px;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  .video-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(250,248,245,0.6);
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .video-card .testimonial-author {
+    margin-top: 0.25rem;
+  }
+
+  @media (max-width: 900px) {
+    .video-testimonials {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      max-width: 320px;
+    }
+  }
+
   /* ── PRESS QUOTE ── */
   .press-section {
     padding: 5rem 2rem;
@@ -1353,11 +1406,29 @@
   </div>
 </section>
 
-<!-- TESTIMONIAL -->
-<div class="testimonial-section">
+<!-- TESTIMONIALS -->
+<div class="testimonial-section" id="testimonials">
   <div class="section-inner reveal">
-    <div class="testimonial-quote" data-fr="Grace a Samantha, j'ai appris a ecouter mon corps. Pour la premiere fois depuis des annees, je me sens en paix. C'est comme si quelque chose de profond s'etait enfin libere." data-en="Thanks to Samantha, I learned to listen to my body. For the first time in years, I feel at peace. It's as if something deep finally released.">Grace a Samantha, j'ai appris a ecouter mon corps. Pour la premiere fois depuis des annees, je me sens en paix. C'est comme si quelque chose de profond s'etait enfin libere.</div>
-    <div class="testimonial-author">&mdash; Marie, Paris</div>
+    <div class="section-label" data-fr="Temoignages" data-en="Testimonials" style="margin-bottom:1rem;">Temoignages</div>
+    <h2 class="section-title" data-fr="Elles ont <em>vecu</em> la transformation" data-en="They <em>lived</em> the transformation" style="margin-bottom:0;">Elles ont <em>vecu</em> la transformation</h2>
+
+    <div class="video-testimonials">
+      <div class="video-card reveal">
+        <!-- Replace with: <video src="videos/temoignage-1.mp4" controls playsinline preload="none" poster="images/poster-1.jpg"></video> -->
+        <div class="video-placeholder">Video 1</div>
+        <div class="testimonial-author">&mdash; Marie, Paris</div>
+      </div>
+      <div class="video-card reveal">
+        <!-- Replace with: <video src="videos/temoignage-2.mp4" controls playsinline preload="none" poster="images/poster-2.jpg"></video> -->
+        <div class="video-placeholder">Video 2</div>
+        <div class="testimonial-author">&mdash; Claire, Lyon</div>
+      </div>
+      <div class="video-card reveal">
+        <!-- Replace with: <video src="videos/temoignage-3.mp4" controls playsinline preload="none" poster="images/poster-3.jpg"></video> -->
+        <div class="video-placeholder">Video 3</div>
+        <div class="testimonial-author">&mdash; Sophie, Bordeaux</div>
+      </div>
+    </div>
   </div>
 </div>
 
