@@ -13,7 +13,7 @@ La branche `claude/laughing-dijkstra-8fifgm` contient tout le travail, mais
 
 Fusionner la branche dans `main` déclenche automatiquement le déploiement Vercel.
 
-Vérification une fois fait : ouvrir <https://samantha-breathwork.vercel.app/> et
+Vérification une fois fait : ouvrir <https://www.samanthabreathwork.com/> et
 regarder le titre de l'onglet. Il doit afficher
 **« Breathwork en ligne et libération émotionnelle pour femmes »**.
 S'il affiche encore « Therapie Somatique & Breathwork en France », le
@@ -25,7 +25,7 @@ déploiement n'a pas eu lieu.
 
 1. Aller sur <https://analytics.google.com> et créer un compte.
 2. Créer une **propriété** nommée `Samantha Breathwork`, fuseau Paris, devise EUR.
-3. Créer un **flux de données** de type Web sur `https://samantha-breathwork.vercel.app`.
+3. Créer un **flux de données** de type Web sur `https://www.samanthabreathwork.com`.
 4. Google affiche alors un **identifiant de mesure** de la forme `G-XXXXXXXXXX`.
 5. Ouvrir `assets/analytics.js`, ligne 14, et remplacer :
 
@@ -67,7 +67,7 @@ Alternative sans cookie et exemptée de bandeau : **Plausible** ou
 
 1. Aller sur <https://search.google.com/search-console>.
 2. Ajouter une propriété de type **Préfixe d'URL** :
-   `https://samantha-breathwork.vercel.app`
+   `https://www.samanthabreathwork.com`
 3. Choisir la validation par **balise HTML**. Google donne une balise du type :
 
    ```html
@@ -89,11 +89,11 @@ Une fois la propriété validée :
 2. **Inspection de l'URL** (barre du haut) : coller l'adresse de la page, puis
    **Demander une indexation**. À faire en priorité pour :
 
-   - `https://samantha-breathwork.vercel.app/`
-   - `https://samantha-breathwork.vercel.app/breathwork-en-ligne.html`
-   - `https://samantha-breathwork.vercel.app/prix-seance-breathwork.html`
-   - `https://samantha-breathwork.vercel.app/breathwork-contre-indications.html`
-   - `https://samantha-breathwork.vercel.app/breathwork-c-est-quoi.html`
+   - `https://www.samanthabreathwork.com/`
+   - `https://www.samanthabreathwork.com/breathwork-en-ligne.html`
+   - `https://www.samanthabreathwork.com/prix-seance-breathwork.html`
+   - `https://www.samanthabreathwork.com/breathwork-contre-indications.html`
+   - `https://www.samanthabreathwork.com/breathwork-c-est-quoi.html`
 
    Google limite le nombre de demandes manuelles par jour : traiter le reste
    sur deux ou trois jours. Le sitemap suffit pour les pages villes.
