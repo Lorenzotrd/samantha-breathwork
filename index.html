@@ -3,21 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Samantha Breathwork — Therapie Somatique & Breathwork en France</title>
-<meta name="description" content="Samantha Breathwork : therapie somatique et breathwork pour sortir du mode survie. Liberez le stress, reconnectez corps et esprit. Seances en presentiel et en ligne en France.">
-<meta name="keywords" content="breathwork, therapie somatique, respiration consciente, breathwork france, somatic therapy">
+<title>Breathwork en ligne et libération émotionnelle pour femmes | Samantha Breathwork</title>
+<meta name="description" content="Séances de breathwork en ligne pour femmes : libérez l'anxiété, les tensions et les émotions bloquées. Thérapie somatique et respiration consciente, en visio depuis chez vous. Appel découverte gratuit.">
+<meta name="keywords" content="breathwork, breathwork en ligne, séance breathwork, respiration consciente, thérapie somatique, libération émotionnelle, anxiété">
+<!-- Search Console : coller le code fourni par Google (Propriété préfixe d'URL
+     > Valider via balise HTML) à la place de REMPLACER_PAR_LE_CODE_GOOGLE. -->
+<meta name="google-site-verification" content="REMPLACER_PAR_LE_CODE_GOOGLE">
 <link rel="canonical" href="https://samantha-breathwork.vercel.app/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Samantha Breathwork — Therapie Somatique & Breathwork">
-<meta property="og:description" content="Sortir du mode survie, retrouver la paix. Therapie somatique et breathwork pour femmes en France.">
+<meta property="og:title" content="Breathwork en ligne et libération émotionnelle pour femmes">
+<meta property="og:description" content="Sortir du mode survie, retrouver la paix. Séances de breathwork en ligne pour femmes, partout en France et en francophonie.">
 <meta property="og:url" content="https://samantha-breathwork.vercel.app/">
 <meta property="og:site_name" content="Samantha Breathwork">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Samantha Breathwork — Therapie Somatique & Breathwork">
-<meta name="twitter:description" content="Sortir du mode survie, retrouver la paix. Therapie somatique et breathwork pour femmes en France.">
+<meta name="twitter:title" content="Breathwork en ligne et libération émotionnelle pour femmes">
+<meta name="twitter:description" content="Sortir du mode survie, retrouver la paix. Séances de breathwork en ligne pour femmes, partout en France et en francophonie.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Libre+Franklin:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -1226,17 +1231,244 @@
       min-height: 280px;
     }
   }
+
+  /* ── BARRE DE RESERVATION MOBILE ── */
+  .sticky-book {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 95;
+    display: none; padding: 0.75rem 1rem;
+    background: rgba(245,240,234,0.96);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 -1px 0 var(--border);
+  }
+  .sticky-book a {
+    display: block; text-align: center; padding: 0.9rem 1rem;
+    background: var(--sage-deep); color: var(--cream); text-decoration: none;
+    font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  @media (max-width: 768px) {
+    .sticky-book { display: block; }
+    footer { padding-bottom: 6rem; }
+  }
+
+  /* ── RESSOURCES ── */
+  .resources-section { background: var(--bg-warm); }
+  .resources-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.1rem; margin-top: 2.5rem;
+  }
+  .resource-card {
+    display: block; padding: 1.6rem 1.5rem; background: var(--bg-card);
+    border: 1px solid var(--border); text-decoration: none; transition: all 0.35s ease;
+  }
+  .resource-card:hover { border-color: var(--sage-light); transform: translateY(-3px); }
+  .resource-card .r-label {
+    font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--sage); margin-bottom: 0.6rem;
+  }
+  .resource-card .r-title {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.22rem;
+    font-weight: 400; color: var(--text); line-height: 1.3; margin-bottom: 0.5rem;
+  }
+  .resource-card .r-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
 </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Samantha Breathwork",
-  "description": "Therapie somatique et breathwork pour sortir du mode survie. Seances en presentiel et en ligne en France.",
-  "url": "https://samantha-breathwork.vercel.app/",
-  "serviceType": ["Breathwork", "Therapie Somatique", "Respiration Consciente"],
-  "areaServed": {"@type": "Country", "name": "France"},
-  "sameAs": ["https://www.instagram.com/samantha.breathwork/"]
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://samantha-breathwork.vercel.app/#praticienne",
+      "name": "Samantha Breathwork",
+      "description": "Séances de breathwork et de thérapie somatique en ligne pour femmes : libérer l'anxiété, les tensions et les émotions bloquées.",
+      "url": "https://samantha-breathwork.vercel.app/",
+      "image": "https://samantha-breathwork.vercel.app/images/WhatsApp%20Image%202026-02-09%20at%2010.03.03.jpeg",
+      "serviceType": [
+        "Breathwork",
+        "Thérapie somatique",
+        "Respiration consciente",
+        "Libération émotionnelle"
+      ],
+      "availableLanguage": [
+        "fr",
+        "en"
+      ],
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "France"
+        },
+        {
+          "@type": "Country",
+          "name": "Belgique"
+        },
+        {
+          "@type": "Country",
+          "name": "Suisse"
+        },
+        {
+          "@type": "Country",
+          "name": "Luxembourg"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        }
+      ],
+      "founder": {
+        "@id": "https://samantha-breathwork.vercel.app/#samantha"
+      },
+      "sameAs": [
+        "https://www.instagram.com/samantha.breathwork/"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Accompagnements",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Séance de breathwork à l'unité",
+              "description": "Séance individuelle de 60 à 90 minutes en visio.",
+              "serviceType": "Breathwork"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Accompagnement 1:1 de 3 à 6 mois",
+              "description": "Accompagnement sur mesure, séances bi-mensuelles et support entre les séances.",
+              "serviceType": "Breathwork"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://samantha-breathwork.vercel.app/#samantha",
+      "name": "Samantha",
+      "jobTitle": "Thérapeute somatique et facilitatrice de breathwork",
+      "worksFor": {
+        "@id": "https://samantha-breathwork.vercel.app/#praticienne"
+      },
+      "sameAs": [
+        "https://www.instagram.com/samantha.breathwork/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://samantha-breathwork.vercel.app/#site",
+      "url": "https://samantha-breathwork.vercel.app/",
+      "name": "Samantha Breathwork",
+      "inLanguage": "fr-FR",
+      "publisher": {
+        "@id": "https://samantha-breathwork.vercel.app/#praticienne"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://samantha-breathwork.vercel.app/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "C'est quoi exactement la thérapie somatique ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La thérapie somatique est une approche centrée sur le corps qui permet de libérer les tensions, les traumas et les émotions stockées dans le système nerveux. Contrairement aux thérapies purement verbales, elle travaille avec les sensations physiques pour créer un changement profond et durable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment se passe une séance à distance ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Je travaille en visio, où que vous soyez. Vous êtes allongée chez vous, avec un casque, et je vous guide à la voix pendant toute la séance. C'est souvent plus puissant que le cabinet : après une libération émotionnelle, vous restez dans votre lit au lieu de devoir vous recomposer et reprendre les transports."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de séances faut-il pour voir des résultats ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Chaque personne est unique. Certaines ressentent un soulagement dès la première séance. Pour un changement durable et profond, un accompagnement de 3 à 6 mois est recommandé — c'est le temps nécessaire pour reprogrammer le système nerveux en douceur."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Est-ce que le breathwork peut être intense ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le breathwork peut effectivement amener des libérations émotionnelles puissantes. Tout est fait dans un cadre sécurisant et bienveillant. Vous êtes guidée à votre rythme et je suis là pour vous accompagner à chaque instant."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quel est le prix d'une séance ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En France, une séance individuelle de breathwork se situe entre 80 et 150 € en cabinet et entre 60 et 120 € en ligne. Mes tarifs vous sont communiqués pendant l'appel découverte, qui est gratuit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Y a-t-il des contre-indications ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Le breathwork est déconseillé en cas de troubles cardiovasculaires graves, d'épilepsie, de grossesse, de glaucome ou de troubles psychiatriques lourds. Nous passons tout cela en revue pendant l'appel découverte, et je ne prends pas la séance si une contre-indication est présente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "De quoi ai-je besoin pour une séance ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un casque ou des écouteurs, un endroit où vous allonger, une heure trente sans interruption, et de quoi vous couvrir. Aucun matériel, aucune application, aucun abonnement."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://samantha-breathwork.vercel.app/#temoignage-valerie",
+      "name": "Témoignage de Valerie — après un accompagnement breathwork",
+      "description": "Valerie raconte ce qui a changé pour elle après un accompagnement en breathwork et thérapie somatique avec Samantha.",
+      "contentUrl": "https://samantha-breathwork.vercel.app/videos/valerie.mp4",
+      "uploadDate": "2026-09-19",
+      "inLanguage": "fr-FR",
+      "thumbnailUrl": "https://samantha-breathwork.vercel.app/images/WhatsApp%20Image%202026-02-09%20at%2010.03.03.jpeg",
+      "publisher": {
+        "@id": "https://samantha-breathwork.vercel.app/#praticienne"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://samantha-breathwork.vercel.app/#temoignage-alizee",
+      "name": "Témoignage de Alizee — après un accompagnement breathwork",
+      "description": "Alizee raconte ce qui a changé pour elle après un accompagnement en breathwork et thérapie somatique avec Samantha.",
+      "contentUrl": "https://samantha-breathwork.vercel.app/videos/alizee.mov",
+      "uploadDate": "2026-09-19",
+      "inLanguage": "fr-FR",
+      "thumbnailUrl": "https://samantha-breathwork.vercel.app/images/WhatsApp%20Image%202026-02-09%20at%2010.03.03.jpeg",
+      "publisher": {
+        "@id": "https://samantha-breathwork.vercel.app/#praticienne"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://samantha-breathwork.vercel.app/#temoignage-manon",
+      "name": "Témoignage de Manon — après un accompagnement breathwork",
+      "description": "Manon raconte ce qui a changé pour elle après un accompagnement en breathwork et thérapie somatique avec Samantha.",
+      "contentUrl": "https://samantha-breathwork.vercel.app/videos/manon.mp4",
+      "uploadDate": "2026-09-19",
+      "inLanguage": "fr-FR",
+      "thumbnailUrl": "https://samantha-breathwork.vercel.app/images/WhatsApp%20Image%202026-02-09%20at%2010.03.03.jpeg",
+      "publisher": {
+        "@id": "https://samantha-breathwork.vercel.app/#praticienne"
+      }
+    }
+  ]
 }
 </script>
 </head>
@@ -1249,6 +1481,7 @@
     <li><a href="#about" data-fr="À propos" data-en="About">À propos</a></li>
     <li><a href="#approach" data-fr="Approche" data-en="Approach">Approche</a></li>
     <li><a href="#offers" data-fr="Offres" data-en="Offers">Offres</a></li>
+    <li><a href="#ressources" data-fr="Ressources" data-en="Resources">Ressources</a></li>
     <li><a href="#faq" data-fr="FAQ" data-en="FAQ">FAQ</a></li>
     <li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
     <li><button class="lang-toggle lang-toggle-desktop" onclick="toggleLang()">EN</button></li>
@@ -1264,6 +1497,7 @@
   <a href="#about" onclick="toggleMenu()" data-fr="À propos" data-en="About">À propos</a>
   <a href="#approach" onclick="toggleMenu()" data-fr="Approche" data-en="Approach">Approche</a>
   <a href="#offers" onclick="toggleMenu()" data-fr="Offres" data-en="Offers">Offres</a>
+  <a href="#ressources" onclick="toggleMenu()" data-fr="Ressources" data-en="Resources">Ressources</a>
   <a href="#faq" onclick="toggleMenu()" data-fr="FAQ" data-en="FAQ">FAQ</a>
   <a href="#contact" onclick="toggleMenu()" data-fr="Contact" data-en="Contact">Contact</a>
   <button class="lang-toggle" onclick="toggleLang()" style="margin-top:1rem;">EN</button>
@@ -1274,8 +1508,8 @@
   <div class="hero-content">
     <div class="hero-leaf" data-fr="Somatic Therapy &middot; Breathwork" data-en="Somatic Therapy &middot; Breathwork">Somatic Therapy &middot; Breathwork</div>
     <h1 data-fr="Sortir du mode <em>survie</em>, retrouver la paix" data-en="Leave <em>survival</em> mode, find your peace">Sortir du mode <em>survie</em>, retrouver la paix</h1>
-    <p class="hero-sub" data-fr="J'accompagne les femmes à libérer les blocages émotionnels, reconnecter corps et esprit, et retrouver un espace de paix intérieure &mdash; à travers la thérapie somatique et le breathwork." data-en="I guide women to release emotional blockages, reconnect body and mind, and find inner peace &mdash; through somatic therapy and breathwork.">J'accompagne les femmes à libérer les blocages émotionnels, reconnecter corps et esprit, et retrouver un espace de paix intérieure &mdash; à travers la thérapie somatique et le breathwork.</p>
-    <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" class="hero-cta">
+    <p class="hero-sub" data-fr="Le breathwork et la thérapie somatique pour libérer les blocages émotionnels, apaiser l'anxiété et reconnecter corps et esprit. Séances individuelles en ligne, où que vous soyez." data-en="Breathwork and somatic therapy to release emotional blockages, ease anxiety and reconnect body and mind. One-to-one sessions online, wherever you are.">Le breathwork et la thérapie somatique pour libérer les blocages émotionnels, apaiser l'anxiété et reconnecter corps et esprit. Séances individuelles en ligne, où que vous soyez.</p>
+    <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" data-booking-placement="hero" class="hero-cta">
       <span data-fr="Réserver une séance" data-en="Book a session">Réserver une séance</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
@@ -1401,7 +1635,7 @@
 
     <!-- CTA -->
     <div class="transformation-cta-wrap reveal">
-      <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" class="transformation-cta">
+      <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" data-booking-placement="transformation" class="transformation-cta">
         <span data-fr="Commencer ma transformation" data-en="Start my transformation">Commencer ma transformation</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
@@ -1446,11 +1680,11 @@
         <p data-fr="Une séance individuelle de thérapie somatique et breathwork pour découvrir le travail, libérer une tension immédiate, ou simplement vous offrir un moment de reconnexion profonde." data-en="An individual somatic therapy and breathwork session to discover the work, release immediate tension, or simply give yourself a moment of deep reconnection.">Une séance individuelle de thérapie somatique et breathwork pour découvrir le travail, libérer une tension immédiate, ou simplement vous offrir un moment de reconnexion profonde.</p>
         <ul class="offer-features">
           <li data-fr="Séance de 60-90 minutes" data-en="60-90 minute session">Séance de 60-90 minutes</li>
-          <li data-fr="En présentiel ou en ligne" data-en="In person or online">En présentiel ou en ligne</li>
+          <li data-fr="En visio, où que vous soyez" data-en="Online, wherever you are">En visio, où que vous soyez</li>
           <li data-fr="Bilan personnalisé" data-en="Personalized assessment">Bilan personnalisé</li>
           <li data-fr="Outils pratiques à emporter" data-en="Practical tools to take away">Outils pratiques à emporter</li>
         </ul>
-        <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" class="offer-btn outline" data-fr="Réserver" data-en="Book now">Réserver</a>
+        <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" data-booking-placement="offre-seance-unite" class="offer-btn outline" data-fr="Réserver" data-en="Book now">Réserver</a>
       </div>
 
       <!-- 1:1 Guidance -->
@@ -1465,7 +1699,7 @@
           <li data-fr="Exercices & rituels personnalisés" data-en="Personalized exercises & rituals">Exercices & rituels personnalisés</li>
           <li data-fr="Appel découverte offert" data-en="Free discovery call">Appel découverte offert</li>
         </ul>
-        <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" class="offer-btn" data-fr="Réserver un appel" data-en="Book a call">Réserver un appel</a>
+        <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" data-booking-placement="offre-accompagnement" class="offer-btn" data-fr="Réserver un appel" data-en="Book a call">Réserver un appel</a>
       </div>
     </div>
   </div>
@@ -1488,11 +1722,11 @@
       </div>
       <div class="faq-item reveal">
         <button class="faq-question" onclick="toggleFaq(this)">
-          <span data-fr="Les séances sont-elles en présentiel ou en ligne ?" data-en="Are sessions in person or online?">Les séances sont-elles en présentiel ou en ligne ?</span>
+          <span data-fr="Comment se passe une séance à distance ?" data-en="How does a remote session work?">Comment se passe une séance à distance ?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p data-fr="Les deux options sont possibles. Les séances en présentiel permettent un travail corporel plus approfondi, mais les séances en ligne sont tout aussi transformatrices et offrent plus de flexibilité." data-en="Both options are available. In-person sessions allow for deeper bodywork, but online sessions are equally transformative and offer more flexibility.">Les deux options sont possibles. Les séances en présentiel permettent un travail corporel plus approfondi, mais les séances en ligne sont tout aussi transformatrices et offrent plus de flexibilité.</p>
+          <p data-fr="Je travaille en visio, où que vous soyez. Vous êtes allongée chez vous, avec un casque, et je vous guide à la voix pendant toute la séance. C'est souvent plus puissant que le cabinet : après une libération émotionnelle, vous restez dans votre lit au lieu de devoir vous recomposer et reprendre les transports." data-en="I work over video, wherever you are. You lie down at home with headphones on, and I guide you with my voice throughout. It is often more powerful than an in-person room: after an emotional release you stay in your own bed instead of having to pull yourself together and take the metro home.">Je travaille en visio, où que vous soyez. Vous êtes allongée chez vous, avec un casque, et je vous guide à la voix pendant toute la séance. C'est souvent plus puissant que le cabinet : après une libération émotionnelle, vous restez dans votre lit au lieu de devoir vous recomposer et reprendre les transports.</p>
         </div>
       </div>
       <div class="faq-item reveal">
@@ -1513,6 +1747,68 @@
           <p data-fr="Le breathwork peut effectivement amener des libérations émotionnelles puissantes. Tout est fait dans un cadre sécurisant et bienveillant. Vous êtes guidée à votre rythme et je suis là pour vous accompagner à chaque instant." data-en="Breathwork can indeed bring powerful emotional releases. Everything is done in a safe, nurturing environment. You are guided at your own pace and I am there to support you every step of the way.">Le breathwork peut effectivement amener des libérations émotionnelles puissantes. Tout est fait dans un cadre sécurisant et bienveillant. Vous êtes guidée à votre rythme et je suis là pour vous accompagner à chaque instant.</p>
         </div>
       </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span data-fr="Quel est le prix d'une séance ?" data-en="How much does a session cost?">Quel est le prix d'une séance ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-fr="En France, une séance individuelle de breathwork se situe entre 80 et 150&nbsp;&euro; en cabinet et entre 60 et 120&nbsp;&euro; en ligne. Mes tarifs vous sont communiqués pendant l'appel découverte, qui est gratuit. J'ai détaillé les fourchettes du marché et les remboursements possibles par les mutuelles dans <a href=&quot;prix-seance-breathwork.html&quot;>cet article</a>." data-en="In France, an individual breathwork session ranges from &euro;80 to &euro;150 in person and &euro;60 to &euro;120 online. My own rates are shared during the free discovery call. I have detailed market ranges and possible insurance reimbursement in <a href=&quot;prix-seance-breathwork.html&quot;>this article</a>.">En France, une séance individuelle de breathwork se situe entre 80 et 150&nbsp;&euro; en cabinet et entre 60 et 120&nbsp;&euro; en ligne. Mes tarifs vous sont communiqués pendant l'appel découverte, qui est gratuit. J'ai détaillé les fourchettes du marché et les remboursements possibles par les mutuelles dans <a href="prix-seance-breathwork.html">cet article</a>.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span data-fr="Y a-t-il des contre-indications ?" data-en="Are there any contraindications?">Y a-t-il des contre-indications ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-fr="Oui, et c'est important. Le breathwork est déconseillé en cas de troubles cardiovasculaires graves, d'épilepsie, de grossesse, de glaucome ou de troubles psychiatriques lourds. Nous passons tout cela en revue pendant l'appel découverte, et je ne prends pas la séance si une contre-indication est présente. La liste complète est <a href=&quot;breathwork-contre-indications.html&quot;>ici</a>." data-en="Yes, and this matters. Breathwork is not advised in cases of serious cardiovascular conditions, epilepsy, pregnancy, glaucoma or severe psychiatric conditions. We review all of this during the discovery call, and I decline the session if a contraindication is present. The full list is <a href=&quot;breathwork-contre-indications.html&quot;>here</a>.">Oui, et c'est important. Le breathwork est déconseillé en cas de troubles cardiovasculaires graves, d'épilepsie, de grossesse, de glaucome ou de troubles psychiatriques lourds. Nous passons tout cela en revue pendant l'appel découverte, et je ne prends pas la séance si une contre-indication est présente. La liste complète est <a href="breathwork-contre-indications.html">ici</a>.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span data-fr="De quoi ai-je besoin pour une séance ?" data-en="What do I need for a session?">De quoi ai-je besoin pour une séance ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-fr="Un casque ou des écouteurs, un endroit où vous allonger, une heure trente sans interruption, et de quoi vous couvrir. C'est tout : aucun matériel, aucune application, aucun abonnement." data-en="Headphones, somewhere to lie down, ninety uninterrupted minutes, and something warm to cover yourself. That is all: no equipment, no app, no subscription.">Un casque ou des écouteurs, un endroit où vous allonger, une heure trente sans interruption, et de quoi vous couvrir. C'est tout : aucun matériel, aucune application, aucun abonnement.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESSOURCES -->
+<section class="resources-section" id="ressources">
+  <div class="section-inner">
+    <div class="section-label reveal" data-fr="Ressources" data-en="Resources">Ressources</div>
+    <h2 class="section-title reveal" data-fr="Comprendre <em>avant</em> de se lancer" data-en="Understand <em>before</em> you begin">Comprendre <em>avant</em> de se lancer</h2>
+    <div class="resources-grid">
+      <a class="resource-card reveal" href="breathwork-c-est-quoi.html">
+        <div class="r-label" data-fr="Guide" data-en="Guide">Guide</div>
+        <div class="r-title" data-fr="Le breathwork, c'est quoi ?" data-en="What is breathwork?">Le breathwork, c'est quoi ?</div>
+        <div class="r-desc" data-fr="Une définition claire, ce qui se passe dans le corps, et la différence avec la cohérence cardiaque." data-en="A clear definition, what happens in the body, and how it differs from cardiac coherence.">Une définition claire, ce qui se passe dans le corps, et la différence avec la cohérence cardiaque.</div>
+      </a>
+      <a class="resource-card reveal" href="breathwork-en-ligne.html">
+        <div class="r-label" data-fr="À distance" data-en="Remote">À distance</div>
+        <div class="r-title" data-fr="Comment se passe une séance en ligne" data-en="How an online session works">Comment se passe une séance en ligne</div>
+        <div class="r-desc" data-fr="Le déroulé précis, ce dont vous avez besoin, et pourquoi le distanciel a de vrais avantages." data-en="The exact flow, what you need, and why remote has real advantages.">Le déroulé précis, ce dont vous avez besoin, et pourquoi le distanciel a de vrais avantages.</div>
+      </a>
+      <a class="resource-card reveal" href="breathwork-contre-indications.html">
+        <div class="r-label" data-fr="Sécurité" data-en="Safety">Sécurité</div>
+        <div class="r-title" data-fr="Breathwork et danger" data-en="Breathwork and risk">Breathwork et danger</div>
+        <div class="r-desc" data-fr="Les contre-indications à connaître avant de réserver, et les signes d'un praticien à fuir." data-en="The contraindications to know before booking, and the warning signs of a bad practitioner.">Les contre-indications à connaître avant de réserver, et les signes d'un praticien à fuir.</div>
+      </a>
+      <a class="resource-card reveal" href="breathwork-bienfaits.html">
+        <div class="r-label" data-fr="Effets" data-en="Effects">Effets</div>
+        <div class="r-title" data-fr="Les bienfaits du breathwork" data-en="The benefits of breathwork">Les bienfaits du breathwork</div>
+        <div class="r-desc" data-fr="Ce que j'observe réellement chez les femmes que j'accompagne &mdash; et ce que je ne promets pas." data-en="What I actually see in the women I work with — and what I do not promise.">Ce que j'observe réellement chez les femmes que j'accompagne &mdash; et ce que je ne promets pas.</div>
+      </a>
+      <a class="resource-card reveal" href="prix-seance-breathwork.html">
+        <div class="r-label" data-fr="Pratique" data-en="Practical">Pratique</div>
+        <div class="r-title" data-fr="Le prix d'une séance" data-en="What a session costs">Le prix d'une séance</div>
+        <div class="r-desc" data-fr="Les fourchettes du marché français, ce qui fait varier le tarif, et les remboursements possibles." data-en="French market ranges, what drives the price, and possible insurance reimbursement.">Les fourchettes du marché français, ce qui fait varier le tarif, et les remboursements possibles.</div>
+      </a>
     </div>
   </div>
 </section>
@@ -1523,7 +1819,7 @@
     <div class="section-label" data-fr="Prête à commencer ?" data-en="Ready to begin?">Prête à commencer ?</div>
     <h2 class="section-title" data-fr="Votre transformation <em>commence ici</em>" data-en="Your transformation <em>starts here</em>">Votre transformation <em>commence ici</em></h2>
     <p class="cta-text" data-fr="Réservez un appel découverte gratuit de 30 minutes. Nous échangerons sur vos besoins et je vous guiderai vers l'accompagnement le plus adapté pour vous." data-en="Book a free 30-minute discovery call. We'll discuss your needs and I'll guide you toward the support that best fits you.">Réservez un appel découverte gratuit de 30 minutes. Nous échangerons sur vos besoins et je vous guiderai vers l'accompagnement le plus adapté pour vous.</p>
-    <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" class="cta-btn">
+    <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" data-booking-placement="cta-bas-de-page" class="cta-btn">
       <span data-fr="Réserver mon appel" data-en="Book my call">Réserver mon appel</span>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
@@ -1536,10 +1832,15 @@
     <span>&copy; 2026 Samantha Breathwork. <span data-fr="Tous droits réservés." data-en="All rights reserved.">Tous droits réservés.</span></span>
     <div class="footer-social">
       <a href="https://www.instagram.com/samantha.breathwork/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
-      <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" aria-label="Reserve ton appel">Reserve ton appel</a>
+      <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" data-booking-placement="pied-de-page" aria-label="Reserve ton appel">Reserve ton appel</a>
     </div>
   </div>
   <div style="max-width:900px;margin:1rem auto 0;padding:0 2rem;display:flex;flex-wrap:wrap;justify-content:center;gap:0.3rem 0.8rem;">
+    <a href="breathwork-c-est-quoi.html" style="font-size:0.58rem;color:rgba(245,240,234,0.42);text-decoration:none;letter-spacing:0.02em;">Le breathwork c'est quoi</a>
+    <a href="breathwork-en-ligne.html" style="font-size:0.58rem;color:rgba(245,240,234,0.42);text-decoration:none;letter-spacing:0.02em;">Breathwork en ligne</a>
+    <a href="breathwork-contre-indications.html" style="font-size:0.58rem;color:rgba(245,240,234,0.42);text-decoration:none;letter-spacing:0.02em;">Contre-indications</a>
+    <a href="breathwork-bienfaits.html" style="font-size:0.58rem;color:rgba(245,240,234,0.42);text-decoration:none;letter-spacing:0.02em;">Bienfaits</a>
+    <a href="prix-seance-breathwork.html" style="font-size:0.58rem;color:rgba(245,240,234,0.42);text-decoration:none;letter-spacing:0.02em;">Prix d'une séance</a>
     <a href="breathwork-paris.html" style="font-size:0.58rem;color:rgba(245,240,234,0.3);text-decoration:none;letter-spacing:0.02em;">Breathwork Paris</a>
     <a href="breathwork-lyon.html" style="font-size:0.58rem;color:rgba(245,240,234,0.3);text-decoration:none;letter-spacing:0.02em;">Breathwork Lyon</a>
     <a href="breathwork-marseille.html" style="font-size:0.58rem;color:rgba(245,240,234,0.3);text-decoration:none;letter-spacing:0.02em;">Breathwork Marseille</a>
@@ -1609,5 +1910,12 @@
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
+<!-- BARRE DE RESERVATION MOBILE -->
+<div class="sticky-book">
+  <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" data-booking-placement="barre-mobile" data-fr="Réserver un appel gratuit" data-en="Book a free call">Réserver un appel gratuit</a>
+</div>
+
+<script src="assets/analytics.js" defer></script>
+<script src="assets/booking.js" defer></script>
 </body>
 </html>

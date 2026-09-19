@@ -1,3 +1,15 @@
+# Samantha Breathwork — https://samantha-breathwork.vercel.app
+# Tout le site est destiné à être indexé.
+
 User-agent: *
 Allow: /
+
+# Les moteurs ont besoin du CSS et du JS pour rendre les pages correctement.
+Allow: /assets/
+Allow: /images/
+Allow: /Hero/
+
+# Fichiers de travail sans valeur pour la recherche.
+Disallow: /*.DS_Store
+
 Sitemap: https://samantha-breathwork.vercel.app/sitemap.xml

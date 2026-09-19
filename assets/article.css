@@ -1,0 +1,215 @@
+/* ──────────────────────────────────────────────────────────────
+   Samantha Breathwork — feuille de style des articles
+   Reprend les mêmes jetons de couleur et la même typographie
+   que l'accueil et les pages villes.
+   ────────────────────────────────────────────────────────────── */
+:root {
+  --bg: #F5F0EA; --bg-warm: #EDE8E0; --bg-card: #FAF8F5; --bg-light: #F0EBE3;
+  --text: #1A1A1A; --text-soft: #4A4540; --text-muted: #7A746D;
+  --sage: #8B9A7B; --sage-light: #A8B89A; --sage-deep: #6B7A5E;
+  --sage-glow: rgba(139,154,123,0.12); --cream: #FAF8F5;
+  --gold: #C8A96E; --gold-soft: rgba(200,169,110,0.12);
+  --border: rgba(26,26,26,0.08); --border-light: rgba(26,26,26,0.12);
+  --warn: #B4713F; --warn-soft: rgba(180,113,63,0.09);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Libre Franklin', sans-serif; font-weight: 300;
+  background: var(--bg); color: var(--text); line-height: 1.75; overflow-x: hidden;
+}
+::selection { background: var(--sage); color: var(--bg); }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  padding: 1.2rem 3rem; display: flex; justify-content: space-between; align-items: center;
+  background: rgba(245,240,234,0.92);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 var(--border);
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400;
+  letter-spacing: 0.06em; color: var(--text); text-decoration: none;
+}
+.nav-back {
+  font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-soft); text-decoration: none; transition: color 0.3s;
+}
+.nav-back:hover { color: var(--sage-deep); }
+
+/* ── FIL D'ARIANE ── */
+.breadcrumb {
+  max-width: 760px; margin: 0 auto; padding: 7.5rem 2rem 0;
+  font-size: 0.72rem; letter-spacing: 0.06em; color: var(--text-muted);
+}
+.breadcrumb a { color: var(--text-muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--sage-deep); text-decoration: underline; }
+.breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+
+/* ── EN-TÊTE ── */
+.article-header { max-width: 760px; margin: 0 auto; padding: 2rem 2rem 1rem; }
+.article-label {
+  font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 1.2rem;
+}
+.article-header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.1rem, 5vw, 3.4rem); font-weight: 300;
+  line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.4rem;
+}
+.article-header h1 em { font-style: italic; color: var(--sage); }
+.article-standfirst {
+  font-size: 1.08rem; color: var(--text-soft); line-height: 1.85; font-weight: 300;
+}
+.article-meta {
+  margin-top: 1.8rem; padding-top: 1.4rem; border-top: 1px solid var(--border);
+  font-size: 0.76rem; color: var(--text-muted); letter-spacing: 0.04em;
+}
+
+/* ── CORPS ── */
+.article-body { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+.article-body h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 3.2vw, 2.25rem); font-weight: 400;
+  line-height: 1.25; margin: 3.2rem 0 1.2rem; color: var(--text);
+}
+.article-body h3 {
+  font-family: 'Libre Franklin', sans-serif; font-size: 1.02rem; font-weight: 500;
+  margin: 2.2rem 0 0.8rem; color: var(--text);
+}
+.article-body p { margin-bottom: 1.3rem; color: var(--text-soft); font-size: 1rem; }
+.article-body strong { font-weight: 500; color: var(--text); }
+.article-body em { font-style: italic; }
+.article-body a { color: var(--sage-deep); text-decoration: underline; text-underline-offset: 3px; }
+.article-body a:hover { color: var(--text); }
+.article-body ul, .article-body ol { margin: 0 0 1.4rem 1.1rem; color: var(--text-soft); }
+.article-body li { margin-bottom: 0.65rem; padding-left: 0.3rem; }
+.article-body ul { list-style: none; margin-left: 0; }
+.article-body ul > li { position: relative; padding-left: 1.4rem; }
+.article-body ul > li::before {
+  content: ''; position: absolute; left: 0; top: 0.65em;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--sage-light);
+}
+
+/* ── ENCADRÉS ── */
+.callout {
+  background: var(--bg-card); border-left: 2px solid var(--sage);
+  padding: 1.5rem 1.7rem; margin: 2rem 0;
+}
+.callout p:last-child { margin-bottom: 0; }
+.callout-title {
+  font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--sage-deep); margin-bottom: 0.7rem; font-weight: 500;
+}
+.callout.warning { background: var(--warn-soft); border-left-color: var(--warn); }
+.callout.warning .callout-title { color: var(--warn); }
+
+/* ── TABLEAU ── */
+.article-table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.93rem; }
+.article-table th {
+  text-align: left; padding: 0.85rem 0.9rem; background: var(--bg-warm);
+  font-weight: 500; font-size: 0.76rem; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-soft);
+}
+.article-table td {
+  padding: 0.85rem 0.9rem; border-bottom: 1px solid var(--border); color: var(--text-soft);
+}
+.article-table tr:last-child td { border-bottom: none; }
+
+/* ── FAQ ── */
+.faq-block { margin: 2.5rem 0; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-question {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding: 1.25rem 0; text-align: left; font-family: inherit;
+  font-size: 0.97rem; font-weight: 400; color: var(--text); line-height: 1.5;
+}
+.faq-icon { color: var(--sage); font-size: 1.2rem; flex-shrink: 0; transition: transform 0.3s; }
+.faq-item.active .faq-icon { transform: rotate(45deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.faq-item.active .faq-answer { max-height: 700px; }
+.faq-answer p { padding-bottom: 1.3rem; color: var(--text-soft); font-size: 0.95rem; margin: 0; }
+
+/* ── CTA ── */
+.article-cta {
+  background: linear-gradient(160deg, var(--sage-deep) 0%, var(--sage) 100%);
+  color: var(--cream); padding: 3.5rem 2rem; text-align: center; margin-top: 4rem;
+}
+.article-cta h2 {
+  font-family: 'Cormorant Garamond', serif; font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+  font-weight: 300; margin-bottom: 1rem; color: var(--cream);
+}
+.article-cta p {
+  max-width: 520px; margin: 0 auto 2rem; color: rgba(250,248,245,0.85);
+  font-size: 0.98rem; line-height: 1.8;
+}
+.btn-book {
+  display: inline-flex; align-items: center; gap: 0.8rem;
+  padding: 1rem 2.5rem; background: var(--cream); color: var(--sage-deep);
+  text-decoration: none; font-size: 0.78rem; letter-spacing: 0.12em;
+  text-transform: uppercase; transition: all 0.4s ease; border: none; cursor: pointer;
+}
+.btn-book:hover { background: var(--text); color: var(--cream); gap: 1.2rem; }
+.btn-book svg { width: 16px; height: 16px; transition: transform 0.3s; }
+.btn-book:hover svg { transform: translateX(3px); }
+
+/* ── À LIRE AUSSI ── */
+.related { max-width: 760px; margin: 0 auto; padding: 3.5rem 2rem 1rem; }
+.related h2 {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.6rem;
+  font-weight: 400; margin-bottom: 1.5rem;
+}
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; }
+.related-card {
+  display: block; padding: 1.3rem 1.4rem; background: var(--bg-card);
+  border: 1px solid var(--border); text-decoration: none; transition: all 0.3s;
+}
+.related-card:hover { border-color: var(--sage-light); transform: translateY(-2px); }
+.related-card .rc-label {
+  font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 0.5rem;
+}
+.related-card .rc-title { font-size: 0.95rem; color: var(--text); line-height: 1.45; }
+
+/* ── PIED DE PAGE ── */
+footer { background: var(--text); color: rgba(245,240,234,0.55); padding: 3rem 2rem 2.5rem; font-size: 0.8rem; }
+.footer-inner {
+  max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap;
+  justify-content: space-between; align-items: center; gap: 1rem;
+}
+.footer-social { display: flex; gap: 1.5rem; }
+footer a { color: rgba(245,240,234,0.55); text-decoration: none; transition: color 0.3s; }
+footer a:hover { color: var(--cream); }
+.footer-links {
+  max-width: 900px; margin: 1.6rem auto 0; display: flex; flex-wrap: wrap;
+  justify-content: center; gap: 0.35rem 0.9rem;
+}
+.footer-links a { font-size: 0.6rem; color: rgba(245,240,234,0.3); letter-spacing: 0.02em; }
+
+/* ── BARRE DE RÉSERVATION MOBILE ── */
+.sticky-book {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+  display: none; padding: 0.75rem 1rem;
+  background: rgba(245,240,234,0.96);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 -1px 0 var(--border);
+}
+.sticky-book a {
+  display: block; text-align: center; padding: 0.9rem 1rem;
+  background: var(--sage-deep); color: var(--cream); text-decoration: none;
+  font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .breadcrumb { padding-top: 6rem; }
+  .article-body { padding-bottom: 6rem; }
+  .sticky-book { display: block; }
+  .article-table { font-size: 0.86rem; }
+  .article-table th, .article-table td { padding: 0.7rem 0.55rem; }
+  .footer-inner { flex-direction: column; text-align: center; }
+}

@@ -4,17 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Breathwork à Nice | Samantha Breathwork</title>
-<meta name="description" content="Breathwork à Nice : retrouvez la sérénité face à la mer grâce à la respiration consciente et la thérapie somatique. Séances en présentiel et en ligne.">
+<meta name="description" content="Breathwork à Nice : retrouvez la sérénité face à la mer grâce à la respiration consciente et la thérapie somatique. S&eacute;ances individuelles en ligne, partout en France.">
 <meta name="keywords" content="breathwork nice, respiration nice, thérapie somatique nice">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://samantha-breathwork.vercel.app/breathwork-nice.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Breathwork à Nice | Samantha Breathwork">
-<meta property="og:description" content="Breathwork et thérapie somatique à Nice. Séances en présentiel et en ligne.">
+<meta property="og:description" content="Breathwork et thérapie somatique à Nice. S&eacute;ances individuelles en ligne, partout en France.">
 <meta property="og:url" content="https://samantha-breathwork.vercel.app/breathwork-nice.html">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Breathwork à Nice | Samantha Breathwork">
-<meta name="twitter:description" content="Breathwork et thérapie somatique à Nice. Séances en présentiel et en ligne.">
+<meta name="twitter:description" content="Breathwork et thérapie somatique à Nice. S&eacute;ances individuelles en ligne, partout en France.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Libre+Franklin:wght@300;400;500&display=swap" rel="stylesheet">
@@ -91,9 +92,122 @@
   .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.25,0.46,0.45,0.94); }
   .reveal.visible { opacity: 1; transform: translateY(0); }
   @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } .solution-grid { grid-template-columns: 1fr; } section { padding: 4rem 1.5rem; } }
+
+  .sticky-book { position: fixed; left: 0; right: 0; bottom: 0; z-index: 95; display: none; padding: 0.75rem 1rem; background: rgba(245,240,234,0.96); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 -1px 0 var(--border); }
+  .sticky-book a { display: block; text-align: center; padding: 0.9rem 1rem; background: var(--sage-deep); color: var(--cream); text-decoration: none; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; }
+  .city-resources { background: var(--bg-warm); }
+  .city-resources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; margin-top: 2rem; }
+  .city-resource { display: block; padding: 1.3rem 1.4rem; background: var(--bg-card); border: 1px solid var(--border); text-decoration: none; transition: all 0.3s; }
+  .city-resource:hover { border-color: var(--sage-light); transform: translateY(-2px); }
+  .city-resource .cr-label { font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.45rem; }
+  .city-resource .cr-title { font-size: 0.93rem; color: var(--text); line-height: 1.45; }
+  .city-faq { margin-top: 2rem; }
+  .city-faq-item { border-bottom: 1px solid var(--border); }
+  .city-faq-q { width: 100%; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.2rem 0; text-align: left; font-family: inherit; font-size: 0.95rem; font-weight: 400; color: var(--text); line-height: 1.5; }
+  .city-faq-icon { color: var(--sage); font-size: 1.2rem; flex-shrink: 0; transition: transform 0.3s; }
+  .city-faq-item.active .city-faq-icon { transform: rotate(45deg); }
+  .city-faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .city-faq-item.active .city-faq-a { max-height: 600px; }
+  .city-faq-a p { padding-bottom: 1.2rem; color: var(--text-soft); font-size: 0.92rem; margin: 0; }
+  @media (max-width: 768px) { .sticky-book { display: block; } footer { padding-bottom: 6rem; } }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HealthAndBeautyBusiness","name":"Samantha Breathwork — Nice","description":"Séances de breathwork et thérapie somatique à Nice.","url":"https://samantha-breathwork.vercel.app/breathwork-nice.html","areaServed":{"@type":"City","name":"Nice"},"sameAs": ["https://www.instagram.com/samantha.breathwork/"], "serviceType":["Breathwork","Thérapie somatique","Respiration consciente"]}
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://samantha-breathwork.vercel.app/breathwork-nice.html#service",
+      "name": "Breathwork en ligne — Nice",
+      "description": "Séances individuelles de breathwork et de thérapie somatique en visio pour les femmes de Nice.",
+      "url": "https://samantha-breathwork.vercel.app/breathwork-nice.html",
+      "serviceType": [
+        "Breathwork",
+        "Thérapie somatique",
+        "Respiration consciente"
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "Nice"
+      },
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://samantha-breathwork.vercel.app/breathwork-nice.html",
+        "availableLanguage": [
+          "fr",
+          "en"
+        ],
+        "serviceLocation": {
+          "@type": "VirtualLocation",
+          "url": "https://samantha-breathwork.vercel.app/breathwork-nice.html"
+        }
+      },
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Samantha Breathwork",
+        "url": "https://samantha-breathwork.vercel.app/",
+        "sameAs": [
+          "https://www.instagram.com/samantha.breathwork/"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://samantha-breathwork.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Breathwork à Nice",
+          "item": "https://samantha-breathwork.vercel.app/breathwork-nice.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://samantha-breathwork.vercel.app/breathwork-nice.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Proposez-vous des séances de breathwork à Nice ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. J'accompagne des femmes à Nice en séance individuelle, en visio. Vous êtes allongée chez vous avec un casque et je vous guide à la voix pendant toute la séance — aucun déplacement dans Nice n'est nécessaire."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pourquoi une séance en ligne plutôt qu'en cabinet à Nice ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Parce que le travail se passe à l'intérieur de vous et ne demande aucun contact physique. Le distanciel ajoute un avantage réel : après une libération émotionnelle, vous restez chez vous au lieu de devoir vous recomposer et traverser Nice pour rentrer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien coûte une séance de breathwork à Nice ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En France, une séance individuelle se situe entre 80 et 150 € en cabinet et entre 60 et 120 € en ligne. Mes tarifs vous sont communiqués pendant l'appel découverte, qui est gratuit et sans engagement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que faut-il prévoir pour une séance ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un casque ou des écouteurs, un endroit où vous allonger, une heure trente sans interruption, et de quoi vous couvrir. Aucun matériel particulier n'est nécessaire."
+          }
+        }
+      ]
+    }
+  ]
+}
 </script>
 </head>
 <body>
@@ -107,7 +221,7 @@
     <div class="city-badge">Breathwork à Nice</div>
     <h1>La mer est là, mais la <em>paix intérieure</em> vous échappe</h1>
     <p class="city-hero-sub">Nice offre un cadre de rêve. Mais le décor ne suffit pas quand le stress, l'anxiété et la fatigue s'installent. Le breathwork vous ramène à l'essentiel.</p>
-    <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" class="city-cta">
+    <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" data-booking-placement="hero" class="city-cta">
       Réserver une séance
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
@@ -181,7 +295,7 @@
     <div class="about-content">
       <p>Samantha comprend que vivre dans un endroit magnifique ne veut pas dire que tout est facile. Derrière les paysages de carte postale, il y a des femmes qui portent du stress, de l'anxiété et de la fatigue — souvent en silence.</p>
       <p>Son approche mêle <strong>thérapie somatique</strong> et <strong>breathwork</strong> pour vous aider à vous reconnecter à vous-même, à votre corps et à cette sérénité que la mer vous rappelle chaque jour.</p>
-      <p>Séances disponibles en <strong>présentiel</strong> et en <strong>ligne</strong> depuis Nice.</p>
+      <p>Les s&eacute;ances se d&eacute;roulent <strong>en visio</strong>, o&ugrave; que vous soyez &agrave; Nice. Vous &ecirc;tes allong&eacute;e chez vous, au calme, et je vous guide &agrave; la voix pendant toute la s&eacute;ance. C'est souvent plus puissant que le cabinet : apr&egrave;s une lib&eacute;ration &eacute;motionnelle, vous restez dans votre lit au lieu de devoir vous recomposer et reprendre les transports. <a href="breathwork-en-ligne.html">Voir comment se passe une s&eacute;ance &agrave; distance</a>.</p>
     </div>
   </div>
 </section>
@@ -193,12 +307,57 @@
   </div>
 </div>
 
+<section class="city-resources">
+  <div class="section-inner reveal">
+    <div class="section-label">Questions fr&eacute;quentes</div>
+    <h2 class="section-title">Le breathwork &agrave; Nice, <em>concr&egrave;tement</em></h2>
+    <div class="city-faq">
+      <div class="city-faq-item">
+        <button class="city-faq-q" onclick="toggleCityFaq(this)"><span>Proposez-vous des s&eacute;ances de breathwork &agrave; Nice ?</span><span class="city-faq-icon">+</span></button>
+        <div class="city-faq-a"><p>Oui. J'accompagne des femmes &agrave; Nice en s&eacute;ance individuelle, en visio. Vous &ecirc;tes allong&eacute;e chez vous avec un casque et je vous guide &agrave; la voix pendant toute la s&eacute;ance &mdash; aucun d&eacute;placement dans Nice n'est n&eacute;cessaire.</p></div>
+      </div>
+      <div class="city-faq-item">
+        <button class="city-faq-q" onclick="toggleCityFaq(this)"><span>Pourquoi une s&eacute;ance en ligne plut&ocirc;t qu'en cabinet &agrave; Nice ?</span><span class="city-faq-icon">+</span></button>
+        <div class="city-faq-a"><p>Parce que le travail se passe &agrave; l'int&eacute;rieur de vous et ne demande aucun contact physique. Le distanciel ajoute un avantage r&eacute;el : apr&egrave;s une lib&eacute;ration &eacute;motionnelle, vous restez chez vous au lieu de devoir vous recomposer et traverser Nice pour rentrer.</p></div>
+      </div>
+      <div class="city-faq-item">
+        <button class="city-faq-q" onclick="toggleCityFaq(this)"><span>Combien co&ucirc;te une s&eacute;ance de breathwork &agrave; Nice ?</span><span class="city-faq-icon">+</span></button>
+        <div class="city-faq-a"><p>En France, une s&eacute;ance individuelle se situe entre 80 et 150 &euro; en cabinet et entre 60 et 120 &euro; en ligne. Mes tarifs vous sont communiqu&eacute;s pendant l'appel d&eacute;couverte, qui est gratuit et sans engagement.</p></div>
+      </div>
+      <div class="city-faq-item">
+        <button class="city-faq-q" onclick="toggleCityFaq(this)"><span>Que faut-il pr&eacute;voir pour une s&eacute;ance ?</span><span class="city-faq-icon">+</span></button>
+        <div class="city-faq-a"><p>Un casque ou des &eacute;couteurs, un endroit o&ugrave; vous allonger, une heure trente sans interruption, et de quoi vous couvrir. Aucun mat&eacute;riel particulier n'est n&eacute;cessaire.</p></div>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top:3.5rem;">Pour aller plus loin</div>
+    <div class="city-resources-grid">
+        <a class="city-resource" href="breathwork-c-est-quoi.html">
+          <div class="cr-label">Guide</div>
+          <div class="cr-title">Le breathwork, c'est quoi ?</div>
+        </a>
+        <a class="city-resource" href="breathwork-en-ligne.html">
+          <div class="cr-label">&Agrave; distance</div>
+          <div class="cr-title">Comment se passe une s&eacute;ance en ligne</div>
+        </a>
+        <a class="city-resource" href="breathwork-contre-indications.html">
+          <div class="cr-label">S&eacute;curit&eacute;</div>
+          <div class="cr-title">Les contre-indications &agrave; conna&icirc;tre</div>
+        </a>
+        <a class="city-resource" href="prix-seance-breathwork.html">
+          <div class="cr-label">Prix</div>
+          <div class="cr-title">Combien co&ucirc;te une s&eacute;ance ?</div>
+        </a>
+    </div>
+  </div>
+</section>
+
 <section class="cta-bottom">
   <div class="section-inner reveal">
     <div class="section-label">Prête à respirer ?</div>
     <h2 class="section-title">Votre première séance de breathwork <em>à Nice</em></h2>
     <p class="cta-bottom-text">Réservez un appel découverte gratuit de 30 minutes. On échange sur votre situation et vos besoins — sans engagement, sans pression.</p>
-    <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" class="cta-bottom-btn">
+    <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" data-booking-placement="bas-de-page" class="cta-bottom-btn">
       Réserver mon appel gratuit
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
@@ -217,5 +376,19 @@
   const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
+<div class="sticky-book">
+  <a href="https://calendly.com/samanthabreathwork-fyum/30min" target="_blank" rel="noopener" data-booking-placement="barre-mobile">R&eacute;server un appel gratuit</a>
+</div>
+
+<script>
+  function toggleCityFaq(btn) {
+    var item = btn.parentElement;
+    var wasActive = item.classList.contains('active');
+    document.querySelectorAll('.city-faq-item').forEach(function (i) { i.classList.remove('active'); });
+    if (!wasActive) item.classList.add('active');
+  }
+</script>
+<script src="assets/analytics.js" defer></script>
+<script src="assets/booking.js" defer></script>
 </body>
 </html>
