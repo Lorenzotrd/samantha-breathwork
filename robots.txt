@@ -1,4 +1,4 @@
-# Samantha Breathwork — https://samantha-breathwork.vercel.app
+# Samantha Breathwork — https://www.samanthabreathwork.com
 # Tout le site est destiné à être indexé.
 
 User-agent: *
@@ -12,4 +12,4 @@ Allow: /Hero/
 # Fichiers de travail sans valeur pour la recherche.
 Disallow: /*.DS_Store
 
-Sitemap: https://samantha-breathwork.vercel.app/sitemap.xml
+Sitemap: https://www.samanthabreathwork.com/sitemap.xml
