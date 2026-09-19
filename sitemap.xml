@@ -2,46 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://samantha-breathwork.vercel.app/</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://samantha-breathwork.vercel.app/breathwork-paris.html</loc>
+    <loc>https://samantha-breathwork.vercel.app/breathwork-en-ligne.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://samantha-breathwork.vercel.app/prix-seance-breathwork.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://samantha-breathwork.vercel.app/breathwork-c-est-quoi.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://samantha-breathwork.vercel.app/breathwork-contre-indications.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://samantha-breathwork.vercel.app/breathwork-bienfaits.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://samantha-breathwork.vercel.app/breathwork-paris.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://samantha-breathwork.vercel.app/breathwork-lyon.html</loc>
-    <priority>0.8</priority>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://samantha-breathwork.vercel.app/breathwork-marseille.html</loc>
-    <priority>0.8</priority>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://samantha-breathwork.vercel.app/breathwork-bordeaux.html</loc>
-    <priority>0.8</priority>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://samantha-breathwork.vercel.app/breathwork-toulouse.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://samantha-breathwork.vercel.app/breathwork-nice.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://samantha-breathwork.vercel.app/breathwork-nantes.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://samantha-breathwork.vercel.app/breathwork-strasbourg.html</loc>
-    <priority>0.8</priority>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://samantha-breathwork.vercel.app/breathwork-montpellier.html</loc>
-    <priority>0.8</priority>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://samantha-breathwork.vercel.app/breathwork-nice.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://samantha-breathwork.vercel.app/breathwork-nantes.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://samantha-breathwork.vercel.app/breathwork-strasbourg.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://samantha-breathwork.vercel.app/breathwork-lille.html</loc>
-    <priority>0.8</priority>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
