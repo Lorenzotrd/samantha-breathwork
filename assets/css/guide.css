@@ -67,7 +67,7 @@
 
 /* ── Tableau comparatif ── */
 .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); -webkit-overflow-scrolling: touch; }
-.compare { width: 100%; min-width: 620px; border-collapse: collapse; font-size: 14px; }
+.compare { width: 100%; min-width: 420px; border-collapse: collapse; font-size: 14px; }
 .compare th, .compare td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
 .compare th { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-soft); font-weight: 600; background: var(--cream); }
 .compare tr:last-child td { border-bottom: 0; }
@@ -76,12 +76,17 @@
 .compare tr.is-us td:first-child { color: var(--sage-deep); }
 .table-note { font-size: 13px; color: var(--text-soft); }
 
-/* ── Deux colonnes : collectif / individuel ── */
-.duo { display: grid; gap: 14px; margin-top: 22px; }
-.duo__card { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
-.duo__card h3 { margin-top: 0; font-size: 24px; }
-.duo__card p { margin-top: 8px; font-size: 15px; }
-@media (min-width: 760px) { .duo { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; } }
+/* ── Chiffres de la ville ── */
+.stats { display: grid; gap: 12px; margin-top: 22px; }
+.stat { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; }
+.stat__value { font-family: var(--font-title); font-size: 42px; line-height: 1; color: var(--sage-deep); }
+.read .stat__label { margin-top: 10px; color: var(--text); font-size: 15px; }
+.read .stat__src { margin-top: 8px; font-size: 12px; letter-spacing: 0.04em; color: var(--text-soft); }
+@media (min-width: 760px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; } }
+
+/* ── Déroulé d'une séance ── */
+.read .steps-list { padding-left: 22px; }
+.read .steps-list li + li { margin-top: 12px; }
 
 /* ── Témoignages (vrais, repris de l'accueil) ── */
 .quotes { display: grid; gap: 14px; margin-top: 22px; }
@@ -110,12 +115,6 @@
 .author .author__name { font-family: var(--font-title); font-size: 22px; color: var(--text); margin: 0; }
 .author .author__name a { color: inherit; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
 .author p { font-size: 14px; margin: 2px 0 0; }
-
-/* ── Sources ── */
-.sources { font-size: 13px; }
-.sources summary { cursor: pointer; color: var(--text-soft); }
-.sources ol { margin-top: 10px; padding-left: 20px; }
-.sources li { word-break: break-word; }
 
 /* ── Liens vers les autres pages ── */
 .links { display: grid; gap: 12px; margin-top: 18px; }
