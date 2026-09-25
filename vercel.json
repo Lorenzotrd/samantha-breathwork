@@ -1,4 +1,8 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/breathwork-nice", "destination": "/breathwork-en-ligne#villes", "permanent": true },
+    { "source": "/breathwork-strasbourg", "destination": "/breathwork-en-ligne#villes", "permanent": true }
+  ]
 }

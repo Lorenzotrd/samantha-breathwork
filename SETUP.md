@@ -15,8 +15,8 @@ Fusionner la branche dans `main` déclenche automatiquement le déploiement Verc
 
 Vérification une fois fait : ouvrir <https://www.samanthabreathwork.com/> et
 regarder le titre de l'onglet. Il doit afficher
-**« Breathwork en ligne et libération émotionnelle pour femmes »**.
-S'il affiche encore « Therapie Somatique & Breathwork en France », le
+**« Breathwork anxiété en ligne : séances individuelles | Samantha »**.
+S'il affiche encore un titre avec « Thérapie somatique », le
 déploiement n'a pas eu lieu.
 
 ---
@@ -34,7 +34,12 @@ déploiement n'a pas eu lieu.
    ```
 
    par l'identifiant réel. C'est la seule ligne à modifier, elle vaut pour
-   les 16 pages.
+   les pages articles et villes.
+
+   **Les deux pages d'accueil (`/` et `/en`) ont leur propre réglage** : en haut de
+   `assets/js/main.js`, remplacer `[GA4_MEASUREMENT_ID]` par le même identifiant
+   et `[META_PIXEL_ID]` par l'identifiant du Pixel Meta. Tant qu'ils restent entre
+   crochets, rien n'est chargé.
 
 Tant que la ligne n'est pas changée, le fichier ne fait rien : aucune requête,
 aucune erreur dans la console.
@@ -85,15 +90,15 @@ Alternative sans cookie et exemptée de bandeau : **Plausible** ou
 Une fois la propriété validée :
 
 1. **Sitemaps** (menu de gauche) › saisir `sitemap.xml` › Envoyer.
-   Les 16 URL sont déclarées.
+   Les 18 URL sont déclarées (dont la version anglaise `/en`).
 2. **Inspection de l'URL** (barre du haut) : coller l'adresse de la page, puis
    **Demander une indexation**. À faire en priorité pour :
 
    - `https://www.samanthabreathwork.com/`
-   - `https://www.samanthabreathwork.com/breathwork-en-ligne.html`
-   - `https://www.samanthabreathwork.com/prix-seance-breathwork.html`
-   - `https://www.samanthabreathwork.com/breathwork-contre-indications.html`
-   - `https://www.samanthabreathwork.com/breathwork-c-est-quoi.html`
+   - `https://www.samanthabreathwork.com/respiration-anxiete`
+   - `https://www.samanthabreathwork.com/prix-seance-breathwork`
+   - `https://www.samanthabreathwork.com/breathwork-en-ligne`
+   - `https://www.samanthabreathwork.com/breathwork-c-est-quoi`
 
    Google limite le nombre de demandes manuelles par jour : traiter le reste
    sur deux ou trois jours. Le sitemap suffit pour les pages villes.
@@ -109,10 +114,10 @@ ce qu'aucune estimation d'outil ne peut prédire.
 
 ## À ne pas oublier
 
-- **Les tarifs.** `prix-seance-breathwork.html` contient un bloc commenté
-  `À COMPLÉTER PAR SAMANTHA`. Le prix est la première question posée sur
-  Google pour cette activité ; laisser le texte générique en ligne est une
-  occasion manquée.
+- **La devise.** Les prix s'affichent en AUD pour les visiteuses en Australie,
+  en euros sinon (`assets/js/main.js`, objet `PRICES` pour changer les tarifs).
+  Lien à partager pour forcer l'AUD :
+  `https://www.samanthabreathwork.com/?devise=aud`.
 - **Les images orphelines.** `images/hero1.png` (3,8 Mo), `images/hero.jpg`
   (2,1 Mo) et quelques autres ne sont plus référencées nulle part. Environ
   7,5 Mo alourdissent chaque déploiement pour rien.
