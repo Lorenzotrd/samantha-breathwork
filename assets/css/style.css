@@ -518,20 +518,7 @@ button { font: inherit; }
   transition: transform 0.2s ease;
 }
 .t-play:hover span { transform: scale(1.06); }
-.t-label {
-  position: absolute;
-  left: 14px;
-  bottom: 14px;
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  background: rgba(58, 42, 32, 0.7);
-  color: var(--white);
-  padding: 5px 9px;
-  border-radius: 4px;
-  pointer-events: none;
-}
-.t-media.is-playing .t-play, .t-media.is-playing .t-label { display: none; }
+.t-media.is-playing .t-play { display: none; }
 .t-body { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 8px; }
 .t-stars { color: var(--accent); letter-spacing: 0.2em; font-size: 13px; }
 .t-quote { font-family: var(--font-title); font-style: italic; font-size: 21px; line-height: 1.3; }
