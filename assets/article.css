@@ -4,12 +4,12 @@
    que l'accueil et les pages villes.
    ────────────────────────────────────────────────────────────── */
 :root {
-  --bg: #F5F0EA; --bg-warm: #EDE8E0; --bg-card: #FAF8F5; --bg-light: #F0EBE3;
-  --text: #1A1A1A; --text-soft: #4A4540; --text-muted: #7A746D;
-  --sage: #8B9A7B; --sage-light: #A8B89A; --sage-deep: #6B7A5E;
-  --sage-glow: rgba(139,154,123,0.12); --cream: #FAF8F5;
+  --bg: #F3ECE3; --bg-warm: #EAE0D4; --bg-card: #FAF6F1; --bg-light: #EFE6DB;
+  --text: #3B2A20; --brown: #6B4A36; --brown-deep: #4A3326; --clay: #C9A58D; --text-soft: #5A4638; --text-muted: #8A7666;
+  --sage: #8B9A7B; --sage-light: #A8B89A; --sage-deep: #5E6E52;
+  --sage-glow: rgba(139,154,123,0.12); --cream: #FAF6F1;
   --gold: #C8A96E; --gold-soft: rgba(200,169,110,0.12);
-  --border: rgba(26,26,26,0.08); --border-light: rgba(26,26,26,0.12);
+  --border: rgba(59,42,32,0.08); --border-light: rgba(59,42,32,0.12);
   --warn: #B4713F; --warn-soft: rgba(180,113,63,0.09);
 }
 
@@ -136,7 +136,7 @@ nav {
 
 /* ── CTA ── */
 .article-cta {
-  background: linear-gradient(160deg, var(--sage-deep) 0%, var(--sage) 100%);
+  background: linear-gradient(160deg, var(--brown-deep) 0%, var(--brown) 100%);
   color: var(--cream); padding: 3.5rem 2rem; text-align: center; margin-top: 4rem;
 }
 .article-cta h2 {
@@ -153,7 +153,7 @@ nav {
   text-decoration: none; font-size: 0.78rem; letter-spacing: 0.12em;
   text-transform: uppercase; transition: all 0.4s ease; border: none; cursor: pointer;
 }
-.btn-book:hover { background: var(--text); color: var(--cream); gap: 1.2rem; }
+.btn-book:hover { background: var(--brown); color: var(--cream); gap: 1.2rem; }
 .btn-book svg { width: 16px; height: 16px; transition: transform 0.3s; }
 .btn-book:hover svg { transform: translateX(3px); }
 
@@ -176,7 +176,7 @@ nav {
 .related-card .rc-title { font-size: 0.95rem; color: var(--text); line-height: 1.45; }
 
 /* ── PIED DE PAGE ── */
-footer { background: var(--text); color: rgba(245,240,234,0.55); padding: 3rem 2rem 2.5rem; font-size: 0.8rem; }
+footer { background: var(--brown-deep); color: rgba(245,240,234,0.55); padding: 3rem 2rem 2.5rem; font-size: 0.8rem; }
 .footer-inner {
   max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap;
   justify-content: space-between; align-items: center; gap: 1rem;
@@ -200,7 +200,7 @@ footer a:hover { color: var(--cream); }
 }
 .sticky-book a {
   display: block; text-align: center; padding: 0.9rem 1rem;
-  background: var(--sage-deep); color: var(--cream); text-decoration: none;
+  background: var(--brown); color: var(--cream); text-decoration: none;
   font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase;
 }
 
