@@ -108,6 +108,7 @@
 .author { display: flex; gap: 16px; align-items: center; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
 .author img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
 .author .author__name { font-family: var(--font-title); font-size: 22px; color: var(--text); margin: 0; }
+.author .author__name a { color: inherit; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
 .author p { font-size: 14px; margin: 2px 0 0; }
 
 /* ── Sources ── */
