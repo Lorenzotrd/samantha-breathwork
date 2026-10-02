@@ -38,10 +38,10 @@
 /* ── Colonne de lecture ── */
 .read { max-width: 820px; margin: 0 auto; }
 .read > * + * { margin-top: 18px; }
-.read h2 { font-family: var(--font-title); font-weight: 500; font-size: 32px; line-height: 1.1; margin-top: 56px; }
+.read h2 { font-family: var(--font-title); font-size-adjust: var(--title-adjust); font-weight: 500; font-size: 32px; line-height: 1.1; margin-top: 56px; }
 .read h2:first-child { margin-top: 0; }
 .read h2 em { font-style: italic; color: var(--sage-dark); }
-.read h3 { font-family: var(--font-title); font-weight: 500; font-size: 24px; margin-top: 32px; }
+.read h3 { font-family: var(--font-title); font-size-adjust: var(--title-adjust); font-weight: 500; font-size: 24px; margin-top: 32px; }
 .read p, .read li { color: var(--text-soft); }
 .read p strong, .read li strong { color: var(--text); font-weight: 500; }
 .read ul { padding-left: 20px; }
@@ -79,7 +79,7 @@
 /* ── Chiffres de la ville ── */
 .stats { display: grid; gap: 12px; margin-top: 22px; }
 .stat { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; }
-.stat__value { font-family: var(--font-title); font-size: 42px; line-height: 1; color: var(--sage-deep); }
+.stat__value { font-family: var(--font-title); font-size-adjust: var(--title-adjust); font-size: 42px; line-height: 1; color: var(--sage-deep); }
 .read .stat__label { margin-top: 10px; color: var(--text); font-size: 15px; }
 .read .stat__src { margin-top: 8px; font-size: 12px; letter-spacing: 0.04em; color: var(--text-soft); }
 @media (min-width: 760px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; } }
@@ -95,7 +95,7 @@
   background: var(--peach);
   border-radius: 12px;
   padding: 20px 22px;
-  font-family: var(--font-title);
+  font-family: var(--font-title); font-size-adjust: var(--title-adjust);
   font-style: italic;
   font-size: 21px;
   line-height: 1.3;
@@ -112,7 +112,7 @@
 /* ── Auteur ── */
 .author { display: flex; gap: 16px; align-items: center; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
 .author img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
-.author .author__name { font-family: var(--font-title); font-size: 22px; color: var(--text); margin: 0; }
+.author .author__name { font-family: var(--font-title); font-size-adjust: var(--title-adjust); font-size: 22px; color: var(--text); margin: 0; }
 .author .author__name a { color: inherit; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
 .author p { font-size: 14px; margin: 2px 0 0; }
 
