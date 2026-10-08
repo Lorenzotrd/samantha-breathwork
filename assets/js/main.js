@@ -10,9 +10,7 @@
   // Lien de réservation de l'appel découverte (tous les boutons « Réserver »).
   var CALENDLY_URL = 'https://calendly.com/samanthabreathwork-fyum/30min';
 
-  // Identifiants de suivi. Tant qu'ils restent entre crochets, rien n'est chargé.
-  var META_PIXEL_ID = '[META_PIXEL_ID]';
-  var GA4_ID = '[GA4_MEASUREMENT_ID]';
+  // Les identifiants de suivi (GA4, Google Ads) sont dans /assets/tracking.js.
 
   // Prix : le seul endroit où les changer. `per` = prix par séance affiché sous les packs.
   var PRICES = {
@@ -67,65 +65,21 @@
   };
   var T = TEXT[LANG];
 
-  /* ── Suivi (Meta Pixel + GA4) ────────────────────────────────── */
-
-  function isConfigured(id) { return typeof id === 'string' && id.length > 0 && id.charAt(0) !== '['; }
-
-  function loadScript(src) {
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = src;
-    document.head.appendChild(s);
-  }
-
-  function initMetaPixel() {
-    if (!isConfigured(META_PIXEL_ID)) return;
-    /* eslint-disable */
-    !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; }(window, document);
-    /* eslint-enable */
-    loadScript('https://connect.facebook.net/en_US/fbevents.js');
-    window.fbq('init', META_PIXEL_ID);
-    window.fbq('track', 'PageView');
-  }
-
-  function initGA4() {
-    if (!isConfigured(GA4_ID)) return;
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', GA4_ID, { anonymize_ip: true, allow_google_signals: false });
-    loadScript('https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA4_ID));
-  }
-
-  function newEventId() {
-    return 'sb-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 10);
-  }
-
-  function trackMeta(eventName, params) {
-    if (typeof window.fbq !== 'function') return;
-    // API Conversions de Meta (à brancher plus tard) : envoyer le même évènement
-    // côté serveur avec le même `event_id` pour que Meta déduplique navigateur + serveur.
-    // Ex. une fonction serverless POST /api/meta-capi { event_name, event_id, event_source_url }.
-    window.fbq('track', eventName, params || {}, { eventID: newEventId() });
-  }
+  /* ── Suivi (la balise est chargée par /assets/tracking.js) ───── */
 
   function trackGA(eventName, params) {
-    if (typeof window.gtag !== 'function') return;
-    window.gtag('event', eventName, params || {});
+    if (typeof window.gtag === 'function') window.gtag('event', eventName, params || {});
   }
 
   /* ── Réservation ─────────────────────────────────────────────── */
 
+  // Le clic, la fenêtre Calendly et le suivi sont gérés par /assets/booking.js.
   function initBooking() {
     document.querySelectorAll('[data-book]').forEach(function (link) {
       link.setAttribute('href', CALENDLY_URL);
       link.setAttribute('target', '_blank');
       link.setAttribute('rel', 'noopener');
-      link.addEventListener('click', function () {
-        var placement = link.getAttribute('data-book') || 'cta';
-        trackMeta('Schedule', { content_name: placement });
-        trackGA('book_call_click', { placement: placement, language: LANG });
-      });
+      link.setAttribute('data-booking-placement', link.getAttribute('data-book') || 'cta');
     });
   }
 
@@ -274,7 +228,6 @@
       new IntersectionObserver(function (entries, obs) {
         if (seen || !entries[0].isIntersecting) return;
         seen = true;
-        trackMeta('ViewContent', { content_name: 'pricing', content_category: 'offers' });
         trackGA('view_pricing', { language: LANG });
         obs.disconnect();
       }, { threshold: 0.35 }).observe(pricing);
@@ -374,8 +327,6 @@
 
   /* ── Démarrage ───────────────────────────────────────────────── */
 
-  initMetaPixel();
-  initGA4();
   initBooking();
   initCurrency();
   initMenu();

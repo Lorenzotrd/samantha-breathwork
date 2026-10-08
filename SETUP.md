@@ -27,33 +27,49 @@ déploiement n'a pas eu lieu.
 2. Créer une **propriété** nommée `Samantha Breathwork`, fuseau Paris, devise EUR.
 3. Créer un **flux de données** de type Web sur `https://www.samanthabreathwork.com`.
 4. Google affiche alors un **identifiant de mesure** de la forme `G-XXXXXXXXXX`.
-5. Ouvrir `assets/analytics.js`, ligne 14, et remplacer :
+5. Ouvrir `assets/tracking.js` et remplacer `[GA4_MEASUREMENT_ID]` par
+   l'identifiant réel. C'est le seul endroit : le fichier est chargé sur
+   toutes les pages (accueil FR/EN, articles, villes).
 
-   ```js
-   var GA4_ID = 'G-XXXXXXXXXX';   // ← à remplacer
-   ```
-
-   par l'identifiant réel. C'est la seule ligne à modifier, elle vaut pour
-   les pages articles et villes.
-
-   **Les deux pages d'accueil (`/` et `/en`) ont leur propre réglage** : en haut de
-   `assets/js/main.js`, remplacer `[GA4_MEASUREMENT_ID]` par le même identifiant
-   et `[META_PIXEL_ID]` par l'identifiant du Pixel Meta. Tant qu'ils restent entre
-   crochets, rien n'est chargé.
-
-Tant que la ligne n'est pas changée, le fichier ne fait rien : aucune requête,
-aucune erreur dans la console.
+Tant que l'identifiant reste entre crochets, rien n'est chargé : aucune
+requête, aucune erreur dans la console.
 
 ### Ce qui est mesuré automatiquement
 
 | Évènement | Déclenché quand |
 |---|---|
-| `reservation_appel` | clic sur un bouton Calendly, avec la page et l'emplacement exacts |
+| `rendez_vous_confirme` | un rendez-vous est **réellement réservé** dans la fenêtre Calendly |
+| `reservation_appel` | clic sur un bouton de réservation (intention, pas encore une conversion) |
 | `lecture_temoignage` | lecture d'une vidéo témoignage |
 | `lecture_approfondie` | 75 % d'une page atteints au défilement |
 
-Dans GA4, marquer `reservation_appel` comme **conversion clé**
+Dans GA4, marquer `rendez_vous_confirme` comme **évènement clé**
 (Admin › Évènements). C'est le seul chiffre qui compte vraiment.
+
+L'origine de la visite (UTM, ou `google / cpc` pour un clic payant avec gclid)
+est transmise à Calendly : elle apparaît dans le détail de chaque rendez-vous.
+
+---
+
+## 1 bis. Google Ads
+
+Pas de Meta Pixel : seul Google Ads est utilisé pour l'instant.
+
+1. Dans Google Ads : Objectifs › Conversions › Nouvelle action de conversion ›
+   Site Web › configuration manuelle. Nom : `Appel découverte réservé`,
+   catégorie « Réserver un rendez-vous », valeur : aucune, comptage : une.
+2. Choisir « Utiliser Google tag » et relever l'**ID** `AW-…` et le
+   **libellé de conversion**.
+3. Dans `assets/tracking.js`, remplacer `[GOOGLE_ADS_ID]` et
+   `[GOOGLE_ADS_BOOKING_LABEL]`.
+4. Conversion envoyée seulement quand Calendly confirme le rendez-vous
+   (évènement `calendly.event_scheduled` de la fenêtre Calendly). Cela marche
+   avec la formule Calendly gratuite.
+5. Modèle d'URL de suivi conseillé au niveau du compte :
+   `{lpurl}?utm_source=google&utm_medium=cpc&utm_campaign={campaignid}&utm_term={keyword}`
+
+Les signaux publicitaires sont refusés par défaut pour les visiteurs de l'UE,
+du Royaume-Uni et de la Suisse (consent mode) : les pubs visent l'Australie.
 
 ### Note CNIL
 
