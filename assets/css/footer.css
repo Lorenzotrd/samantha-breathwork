@@ -1,0 +1,96 @@
+/* ──────────────────────────────────────────────────────────────
+   Pied de page commun à toutes les pages (accueils, articles, villes FR et EN).
+   Autonome : couleurs en dur, pour un rendu identique quelle que soit la
+   feuille de style de la page (style.css ou article.css).
+   ────────────────────────────────────────────────────────────── */
+
+footer.site-footer {
+  background: #2E2A25;
+  color: #CFC6B8;
+  padding: 56px 20px 120px;
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: left;
+  letter-spacing: normal;
+  border-top: 0;
+}
+footer.site-footer a { color: #CFC6B8; text-decoration: none; transition: color 0.2s ease; }
+footer.site-footer a:hover { color: #FFFFFF; }
+footer.site-footer a:focus-visible { outline: 2px solid #E8C9A8; outline-offset: 3px; border-radius: 2px; }
+footer.site-footer a[aria-current="page"] { color: #FFFFFF; }
+footer.site-footer ul { list-style: none; margin: 0; padding: 0; }
+
+.site-footer__inner,
+.site-footer__bottom { max-width: 1152px; margin: 0 auto; }
+.site-footer__inner { display: grid; gap: 40px; }
+
+.site-footer__logo {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+footer.site-footer .site-footer__logo { color: #F7F1E6; }
+.site-footer__brand p { margin: 12px 0 0; max-width: 340px; color: #B8AE9F; }
+footer.site-footer .site-footer__cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 13px 22px;
+  border-radius: 6px;
+  background: #A25A42;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+footer.site-footer .site-footer__cta:hover { background: #8A4833; color: #FFFFFF; }
+
+.site-footer__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 24px; }
+/* article.css stylise toute balise <nav> comme un menu fixe : on l'annule ici. */
+footer.site-footer nav.site-footer__cols {
+  position: static;
+  width: auto;
+  z-index: auto;
+  padding: 0;
+  justify-content: normal;
+  align-items: normal;
+  background: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+.site-footer__title {
+  margin: 0 0 12px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8C9B80;
+}
+.site-footer__cols li + li { margin-top: 6px; }
+.site-footer__cols a { font-size: 14px; }
+
+.site-footer__bottom {
+  margin-top: 44px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(207, 198, 184, 0.15);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  font-size: 13px;
+  color: #9C9284;
+}
+.site-footer__bottom p { margin: 0; }
+.site-footer__lang span[aria-current] { color: #FFFFFF; }
+.site-footer__sep { margin: 0 8px; opacity: 0.5; }
+
+@media (min-width: 760px) {
+  footer.site-footer { padding: 72px 40px 56px; }
+  .site-footer__cols { grid-template-columns: repeat(4, 1fr); }
+}
+@media (min-width: 1100px) {
+  footer.site-footer { padding: 80px 64px 56px; }
+  .site-footer__inner { grid-template-columns: 1fr 2.4fr; gap: 64px; }
+}
