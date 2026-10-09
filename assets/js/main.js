@@ -24,7 +24,7 @@
     AUD: {
       single: 150,
       pack3: 390, pack3Per: 130,
-      pack5: 650, pack5Per: 130,
+      pack5: 600, pack5Per: 120,
       coaching: 1500,
       singleLabel: { fr: 'Séance 1h30', en: 'Single session' }
     }
